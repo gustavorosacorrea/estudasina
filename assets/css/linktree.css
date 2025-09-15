@@ -1,0 +1,122 @@
+.linktree {
+  color: #181d25;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+  position: relative;
+  z-index: 11;
+  margin-top: -250px;
+}
+
+.box-topper .author {
+    text-align: center;
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-top: 20px;
+}
+
+.linktree img {
+width: 120px;
+height: 120px;
+border-radius: 50%;
+margin-bottom: 5px;
+border: 3px solid #f6f6f6;
+box-shadow: 0px 0px 18px rgb(191 63 63 / 80%);
+box-sizing: content-box;
+}
+
+.linktree .presentation {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.linktree .presentation h1{
+    line-height: 0.9em;
+    font-size: 24px;
+    font-weight: bold;
+}
+.linktree .presentation h2{
+    margin-top: 5px;
+    font-size: 15px;
+    line-height: 25px;
+    color: #888;
+}
+
+.linktree header p {
+  font-weight: 300;
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  color: #525252;
+}
+
+.linktree header h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 85%;
+}
+
+.linktree nav {
+  width: 100%;
+  display: block;
+  max-width: 380px;
+}
+
+.linktree ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.linktree a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #fff;
+
+  box-shadow: 0px 0.5rem 1.5rem -0.25rem var(--link-color);
+  background-color: var(--link-color);
+
+  transition: box-shadow 0.5s;
+}
+
+.linktree a:hover {
+  box-shadow: 0px 0.5rem 1.5rem 0rem var(--link-color);
+}
+
+.linktree i {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.linktree #whatsapp {
+  --link-color: #25D366;
+}
+
+.linktree #salinha {
+  --link-color: #24292e;
+}
+
+.linktree #instagram {
+  --link-color: #e1206c;
+}
+
+.linktree #mentorando {
+  --link-color: #0171e3;
+}
+
+.linktree #blog {
+  --link-color: #673ab7;
+}
