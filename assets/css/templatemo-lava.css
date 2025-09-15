@@ -1000,12 +1000,13 @@ footer .footer-content {
 }
 
 .contact-form, .box-topper {
-  position: relative;
-  z-index: 10;
-  padding: 45px;
-  border-radius: 5px;
-  background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+position: relative;
+z-index: 10;
+padding: 45px 45px 50px 45px;
+margin-bottom: 50px;
+border-radius: 5px;
+background-color: #fff;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   
 }
 
@@ -1015,7 +1016,11 @@ footer .footer-content {
     top: -30px;
 }
 .box-topper .author img {
-    max-width: 120px;    
+    max-width: 120px;
+border: 3px solid #ffd512;
+border-radius: 100%;
+box-shadow: 0px 0px 18px rgb(255 232 29 / 73%);
+box-sizing: content-box;
 }
 
 footer .right-content {
