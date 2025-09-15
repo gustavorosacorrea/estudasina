@@ -141,6 +141,8 @@ body {
   }
   .mobile-bottom-fix {
     margin-bottom: 30px;
+    padding: 0 30px;
+    text-align: justify;
   }
   .mobile-bottom-fix-big {
     margin-bottom: 60px;
@@ -650,7 +652,10 @@ header
   }
 }
 
-
+.box-topper h1 { text-align: left; }
+.left-text.col-lg-6.col-md-12.col-sm-12.col-xs-12 strong {
+    color: black;
+}
 /* 
 ---------------------------------------------
 welcome
@@ -668,17 +673,18 @@ welcome
 .welcome-area .header-text .left-text {
   position: relative;
   align-self: center;
+  padding: 0 30px;
   margin-top: 35%;
   transform: perspective(1px) translateY(-30%) !important;
 }
 
 .welcome-area .header-text h1 {
-  font-weight: 900;
-  font-size: 52px;
-  line-height: 80px;
-  letter-spacing: 1px;
-  margin-bottom: 30px;
-  color: #191a20;
+    font-weight: 900;
+font-size: 52px;
+line-height: 62px;
+letter-spacing: 1px;
+margin-bottom: 30px;
+color: #191a20;
 }
 
 .welcome-area .header-text h1 em {
@@ -718,7 +724,8 @@ welcome
     height: auto;
   }
   .welcome-area .header-text {       
-    width: 92%;
+    width: 100%;
+    text-align: center;
     padding-top: 793px;
   }
   .welcome-area .header-text .left-text {
@@ -966,6 +973,7 @@ footer
 */
 .right-content ul {
     padding: 20px 0;
+    text-align: center;
 }
 
 .right-content {
@@ -1000,13 +1008,14 @@ footer .footer-content {
 }
 
 .contact-form, .box-topper {
-position: relative;
+  position: relative;
 z-index: 10;
 padding: 45px 45px 50px 45px;
 margin-bottom: 50px;
 border-radius: 5px;
 background-color: #fff;
 box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+text-align: justify;
   
 }
 
@@ -1072,12 +1081,13 @@ footer .right-content {
 }
 
 .footer-content .right-content h2 {
-  margin-top: 0px;
-  margin-bottom: 30px;
-  font-size: 42px;
-  text-transform: capitalize;
-  font-weight: 700;
-  letter-spacing: 1px;
+margin-top: 0px;
+margin-bottom: 30px;
+font-size: 42px;
+text-transform: capitalize;
+font-weight: 700;
+letter-spacing: 1px;
+text-align: center;
 }
 
 .footer-content .right-content h2 em {
@@ -1087,6 +1097,7 @@ footer .right-content {
 
 .footer-content .right-content p {
   color: #FFF;
+text-align: center;
 }
 
 .footer-content .right-content a {
