@@ -41,6 +41,10 @@ figure, header, nav, section, article, aside, footer, figcaption {
   border: 0;
   outline: 0;
 }
+.box-topper p {
+    margin-top: 10px;
+    color: #3f3f3f;
+}
 
 .clearfix:after {
   content: ".";
@@ -862,6 +866,7 @@ testimonials
 }
 
 #testimonials {
+  display: none;
   padding-top: 100px;
   position: relative;
   z-index: 9;
@@ -959,7 +964,14 @@ testimonials
 footer
 --------------------------------------------- 
 */
+.right-content ul {
+    padding: 20px 0;
+}
 
+.right-content {
+    text-align: left;
+    padding: 30px;
+}
 @media (max-width: 992px) {
   footer {
     padding-top: 0px!important;
@@ -967,9 +979,6 @@ footer
   }
   .contact-form {
     margin-bottom: 45px;
-  }
-  footer .right-content {
-    text-align: center;
   }
   footer .footer-content {
     padding: 60px 0px!important;
