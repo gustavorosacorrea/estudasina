@@ -13,10 +13,11 @@
 
 .box-topper .author {
     text-align: center;
-    position: relative;
-    top: 0;
-    right: 0;
-    margin-top: 20px;
+bottom: -6%;
+right: 0;
+top: inherit;
+left: 0;
+position: absolute;
 }
 
 .linktree img {
