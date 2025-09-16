@@ -820,10 +820,6 @@ promotion
   margin-top: -200px;
 }
 
-#promotion {
-  padding: 100px 0px;
-}
-
 #promotion .left-image {
   align-self: center;
 }
@@ -1267,3 +1263,4 @@ preloader
     opacity: 0;
   }
 }
+
