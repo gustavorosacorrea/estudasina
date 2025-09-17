@@ -42,66 +42,91 @@
 		});
 	}
 
-	/* ==========
-	   REMOVIDO: handler genérico que pegava todos os a[href*=#]
-	   $('a[href*=\\#]:not([href=\\#])') ...
-	   ========== */
-
 	$(document).ready(function () {
 		// marca "Início" (#welcome) como ativo ao carregar
 		$('a[href^="#welcome"]').addClass('active');
 
-		// Smoothscroll somente para âncoras do menu
-		$('.menu-item[href^="#"]').on('click', function (e) {
-			e.preventDefault();
-			var target = this.hash;
-			if (!target) return;
+		// ===== Smooth scroll global (links âncora e botões) =====
+		const getHeaderOffset = () => $('header').outerHeight() || 0;
 
-			var $target = $(target);
+		// Links âncora: qualquer <a href="#alguma-coisa">, exceto href="#" vazio
+		$(document).on('click', 'a[href^="#"]:not([href="#"]):not([data-no-scroll])', function (e) {
+			const href = this.getAttribute('href');
+			const $target = $(href);
 			if (!$target.length) return;
 
-			// fecha menu mobile ao clicar
-			var width = $(window).width();
-			if (width < 991) {
+			e.preventDefault();
+
+			// fecha menu mobile se o clique veio do menu
+			if ($(this).closest('.header-area .nav').length && $(window).width() < 991) {
 				$('.menu-trigger').removeClass('active');
 				$('.header-area .nav').slideUp(200);
 			}
 
-			$('html, body').stop().animate(
-				{ scrollTop: $target.offset().top },
-				500,
-				'swing',
-				function () {
-					window.location.hash = target;
-					$('.menu-item').removeClass('active');
-					$('.menu-item[href="' + target + '"]').addClass('active');
+			const y = $target.offset().top - getHeaderOffset();
+			$('html, body').stop().animate({ scrollTop: y }, 600, 'swing', () => {
+				if (history.replaceState) {
+					history.replaceState(null, '', href);
+				} else {
+					window.location.hash = href;
 				}
-			);
+				$('.menu-item').removeClass('active');
+				$('.menu-item[href="' + href + '"]').addClass('active');
+			});
 		});
 
-		// Scroll spy: ativa item conforme a rolagem (somente âncoras)
-		$(window).scroll(function () {
-			var scrollPos = $(document).scrollTop() + 80;
+		// Botões/elementos com data-scroll-target="#id"
+		$(document).on('click', '[data-scroll-target]', function (e) {
+			const sel = $(this).data('scroll-target');
+			const $target = $(sel);
+			if (!$target.length) return;
 
-			if (scrollPos === 0) {
+			e.preventDefault();
+
+			if ($(this).closest('.header-area .nav').length && $(window).width() < 991) {
+				$('.menu-trigger').removeClass('active');
+				$('.header-area .nav').slideUp(200);
+			}
+
+			const y = $target.offset().top - getHeaderOffset();
+			$('html, body').stop().animate({ scrollTop: y }, 600, 'swing', () => {
+				if (history.replaceState) history.replaceState(null, '', sel);
+			});
+		});
+
+		// Corrige posicionamento ao carregar página com hash na URL
+		if (window.location.hash) {
+			const $initial = $(window.location.hash);
+			if ($initial.length) {
+				setTimeout(() => {
+					const y0 = $initial.offset().top - getHeaderOffset();
+					$('html, body').scrollTop(y0);
+				}, 0);
+			}
+		}
+
+		// Scroll spy: ativa item conforme a rolagem
+		$(window).scroll(function () {
+			const scrollPos = $(document).scrollTop() + getHeaderOffset() + 1;
+
+			if ($(document).scrollTop() === 0) {
 				$('.menu-item').removeClass('active');
 				$('a[href^="#welcome"]').addClass('active');
 				return;
 			}
 
 			$('.menu-item[href^="#"]').each(function () {
-				var currLink = $(this);
-				var refElement = $(currLink.attr("href"));
-				if (!refElement.length) return;
+				const $ref = $($(this).attr('href'));
+				if (!$ref.length) return;
 
-				if (
-					refElement.position().top <= scrollPos &&
-					refElement.position().top + refElement.height() > scrollPos
-				) {
+				const top = $ref.offset().top - getHeaderOffset();
+				const bottom = top + $ref.outerHeight();
+
+				if (top <= scrollPos && bottom > scrollPos) {
 					$('.menu-item').removeClass("active");
-					currLink.addClass("active");
+					$(this).addClass("active");
 				} else {
-					currLink.removeClass("active");
+					$(this).removeClass("active");
 				}
 			});
 		});
@@ -109,10 +134,7 @@
 
 	// Accordion component
 	const Accordion = {
-		settings: {
-			first_expanded: false,
-			toggle: false
-		},
+		settings: { first_expanded: false, toggle: false },
 
 		openAccordion: function (toggle, content) {
 			if (content.children.length) {
@@ -129,7 +151,6 @@
 
 		init: function (el) {
 			const _this = this;
-
 			let is_first_expanded = _this.settings.first_expanded;
 			if (el.classList.contains("is-first-expanded")) is_first_expanded = true;
 			let is_toggle = _this.settings.toggle;
