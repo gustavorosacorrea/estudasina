@@ -148,20 +148,28 @@ body {
     margin-bottom: 60px;
   }
 }
-
+.mais-info {
+    background-color: #ffffff !important;
+    color: #f8a70b !important;
+    border: 1px solid;
+    margin-top: 10px !important;
+}
 a.main-button-slider {
-  font-size: 14px;
-  border-radius: 25px;
-  padding: 15px 25px;
-  background-color: #fba70b;
-  text-transform: uppercase;
-  color: #fff;
-  font-weight: 600;
-  letter-spacing: 1px;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+font-size: 14px;
+    border-radius: 25px;
+    padding: 15px 25px;
+    background-color: #fba70b;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: block;
+    margin: auto;
+    width: 90%;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
 }
 
 a.main-button-slider:hover {
