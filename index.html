@@ -24,6 +24,7 @@
     
     <link rel="stylesheet" href="assets/css/templatemo-lava.css">
     <link rel="stylesheet" href="assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="assets/css/leads-index.css">
 
 </head>
 
@@ -51,6 +52,7 @@
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="scroll-to-section"><a href="#welcome" class="menu-item">Início</a></li>
+                            <li class=""><a href="leads.html" class="menu-item active">Entrar na Mentoria</a></li>
                             <li class="scroll-to-section"><a href="#about" class="menu-item">Método</a></li>
                             <li class="scroll-to-section"><a href="#testimonials" class="menu-item">Depoimentos</a></li>
                             <li class="submenu">
@@ -84,7 +86,7 @@
                         data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                         <h1>Transforme sua forma de <em>Estudar</em></h1>
                         <p>O <strong>Estuda Sina</strong> é um método de acompanhamento de estudos por <strong>três meses</strong> que inclui metas e feedbacks SEMANAIS de estudos, tanto para auxiliar na aprovação no Exame de Ordem dos Advogados do Brasil – OAB, quanto para em concursos públicos. Com uma metodologia focada no que realmente importa – <strong>AUMENTAR SEU PERCENTUAL DE ACERTO</strong> – e por intermédio de estudo ativo, método pomodoro, revisões, simulados e lei seca você avançará com consistência até se tornar competitivo e aprovado.</p>
-                        <a href="#linktree" class="main-button-slider">Quero ser Mentorando</a>
+                        <a href="#header-leads-form" class="main-button-slider">Quero ser Mentorando</a>
                         <a href="#about" class="mais-info main-button-slider">Saiba Mais</a>
                     </div>
                 </div>
@@ -108,7 +110,7 @@
                             <h4>Planejamento Estratégico</h4>
                             <p>Organize seus estudos em ciclos alternados de disciplina de forma
                             <strong>INDIVIDUAL</strong>, personalizada e realista de acordo com a sua rotina e carga horária.</p>
-                            <a href="#promotion" class="main-button">Entrar na mentoria</a>
+                            <a href="#header-leads-form" class="main-button">Entrar na mentoria</a>
                         </div>
                     </div>
                 </div>
@@ -201,8 +203,6 @@
     </section>
     <!-- ***** Features Big Item End ***** -->
 
-    <div class="right-image-decor"></div>
-
     <!-- ***** Testimonials Starts ***** -->
     <section class="section" id="testimonials">
         <div class="container">
@@ -287,8 +287,75 @@
         </div>
     </section>
     <!-- ***** Testimonials Ends ***** -->
+<div id="header-leads-form" class="header-offer" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+        <span class="title">Chegou a sua vez de Aprovar!</span>
+        <span class="subtitle">Preencha o formulário e dê o primeiro passo para ter acompanhamento e constância até sua aprovação</span>
+</div>    
+<div id="leads-form" class="leads-form-container" data-scroll-reveal="enter left move 24px over 0.6s after 0.2s">    
+    <main class="wrap">
+        <div class="card">
+          <section class="hero">
+            <div class="logoRow">
+              <img src="assets/images/sinara-round.png" alt="EstudaSina">
+              <span class="badge">Mentoria EstudaSina</span>
+            </div>
+            <h1>Acompanhamento individual por 3 meses</h1>
+            <p>Metas claras, feedbacks semanais e cronograma personalizado — até a aprovação. Preencha para entrar na lista e receber os próximos passos.</p>
+          </section>
+    
+          <section class="grid">
+            <div>
+              <form id="leadForm" class="form" action="https://script.google.com/macros/s/AKfycbzWanQIym2Y2jC_zOnKR9eHNg2gianjw5qH6a_p1JVrXHqSHwGGlOCRhnnvCuB0xYX4BA/exec" method="POST" target="lead_iframe" novalidate>
+                <label for="nome">Nome completo *</label>
+                <input id="nome" name="nome" type="text" autocomplete="name" required>
+    
+                <label for="whatsapp">Telefone (WhatsApp) *</label>
+                <input id="whatsapp" name="whatsapp" type="tel" required inputmode="numeric" pattern="^\d{10,15}$" placeholder="(55) 9xxxx-xxxx">
+    
+                <label for="email">E-mail válido *</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+    
+                <label for="objetivo">Para qual área/concurso? *</label>
+                <input id="objetivo" name="objetivo" type="text" required>
+    
+                <label for="mensagem">Conte rapidamente seu momento (opcional)</label>
+                <textarea id="mensagem" name="mensagem" rows="3"></textarea>
+    
+                <input type="text" name="_hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+    
+                <div style="margin:12px 0;">
+                  <label style="display:flex;align-items:center;gap:10px;padding: 15px;">
+                    <input id="consent" name="consentimento" type="checkbox" required>
+                    <span class="muted">Autorizo o contato e o tratamento dos meus dados para fins da mentoria EstudaSina (LGPD).</span>
+                  </label>
+                </div>
+    
+                <!-- campos hidden para UTM/referrer -->
+                <input type="hidden" id="origem" name="origem">
+                <input type="hidden" id="referrer" name="referrer">
+                <input type="hidden" id="utm_source" name="utm_source">
+                <input type="hidden" id="utm_medium" name="utm_medium">
+                <input type="hidden" id="utm_campaign" name="utm_campaign">
+                <input type="hidden" id="utm_content" name="utm_content">
+                <input type="hidden" id="utm_term" name="utm_term">
+    
+                <div class="container-btn">
+                    <button id="submitBtn" type="submit" class="btn-form">
+                        <i class="fa-solid fa-clipboard-list"></i> Enviar informações
+                    </button>
+                </div>
+    
+                <div id="ok" class="success"><i class="fa-solid fa-check"></i> Recebido! Em breve entraremos em contato no WhatsApp/e-mail.</div>
+                <div id="fail" class="error"><i class="fa-solid fa-circle-exclamation"></i> Ops, não foi possível enviar agora. Tente novamente.</div>
+              </form>
+            </div>
+          </section>
+        </div>
+      </main>
+</div>
 
-
+<div class="left-image-decor"></div>
+<div class="right-image-decor"></div>
 <div id="linktree" class="container linktree" style="margin-top: 50px;">
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
@@ -296,22 +363,17 @@
         rel="stylesheet"
       />
       
-        <img
-          src="assets/images/sinara-round.png"
-          width="460"
-          height="460"
-          alt="Sinara Fernanda Kochenborger"
-        />
+<img src="assets/images/left-image.png" style="box-shadow: none;width: 350px; height: 100%; margin-bottom: 10px; border-radius: 0; border: 0;" width="460" height="460" alt="Sinara Fernanda Kochenborger" data-scroll-reveal="enter right move 30px over 0.6s after 0.5s">
     
-        <div class="presentation">
+        <div class="presentation" data-scroll-reveal="enter left move 30px over 0.6s after 0.5s">
             <h1>Sinara Fernanda Kochenborger</h1>
             <h2>@estudasina</h2>
         </div>
     
         <nav>
-          <ul>
+          <ul data-scroll-reveal="enter left move 30px over 0.6s after 0.5s">
             <li id="mentorando">
-              <a href="https://forms.gle/Frpgv6rPWRUrFA4E8" target="_blank">
+              <a href="leads.html">
                 <i class="fas fa-rocket"></i>
                 Quero entrar na Mentoria
               </a>
@@ -337,7 +399,6 @@
           </ul>
         </nav>
       </div>
-
 
     <!-- ***** Footer Start ***** -->
     <footer id="contact-us">
@@ -396,7 +457,7 @@
             </div>
         </div>
     </footer>
-
+  <iframe name="lead_iframe" style="display:none;"></iframe>
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
 
@@ -413,6 +474,12 @@
 
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
+          
+    <!-- Adicionar UTM nos links do site -->
+    <script src="assets/js/link-param.js"></script>
+    
+    <!-- Leads Form -->
+    <script src="assets/js/leads.js"></script>
 
 </body>
 </html>
