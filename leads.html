@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Estuda Sina — método prático e comprovado para aprovações em concursos e OAB.">
+  <meta name="author" content="Estuda Sina">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+  <title>Mentoria EstudaSina — Quero ser Mentorando(a)</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/images/favicon.ico">
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/templatemo-lava.css">
+  <link rel="stylesheet" href="assets/css/owl-carousel.css">
+  <link rel="stylesheet" href="assets/css/leads.css">
+</head>
+<body>
+  <!-- ***** Preloader Start ***** -->
+  <div id="preloader">
+      <div class="jumper">
+          <div></div>
+          <div></div>
+          <div></div>
+      </div>
+  </div>
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <img class="logo" src="assets/images/Logo-Novo-Estuda-Sina.png" alt="Estuda Sina">
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li class="scroll-to-section"><a href="#welcome" class="menu-item">Início</a></li>
+                          <li class="scroll-to-section"><a href="#about" class="menu-item">Método</a></li>
+                          <li class="scroll-to-section"><a href="#testimonials" class="menu-item">Depoimentos</a></li>
+                          <li class="submenu">
+                              <a href="javascript:;">Menu</a>
+                              <ul>
+                                  <li><a href="#about" class="menu-item">Sobre o Método</a></li>
+                                  <li><a href="#promotion" class="menu-item">Diferenciais</a></li>
+                                  <li><a href="#testimonials" class="menu-item">Perguntas Frequentes</a></li>
+                              </ul>
+                          </li>
+                          <li class="scroll-to-section"><a href="linktree.html" class="menu-item">Contato</a></li>
+                      </ul>
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+  <main class="wrap">
+    <div class="card">
+      <section class="hero">
+        <div class="logoRow">
+          <img src="assets/images/sinara-round.png" alt="EstudaSina">
+          <span class="badge">Mentoria EstudaSina</span>
+        </div>
+        <h1>Acompanhamento individual por 3 meses</h1>
+        <p>Metas claras, feedbacks semanais e cronograma personalizado — até a aprovação. Preencha para entrar na lista e receber os próximos passos.</p>
+      </section>
+
+      <section class="grid">
+        <div>
+          <form id="leadForm" class="form" action="https://script.google.com/macros/s/AKfycbzWanQIym2Y2jC_zOnKR9eHNg2gianjw5qH6a_p1JVrXHqSHwGGlOCRhnnvCuB0xYX4BA/exec" method="POST" target="lead_iframe" novalidate>
+            <label for="nome">Nome completo *</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required>
+
+            <label for="whatsapp">Telefone (WhatsApp) *</label>
+            <input id="whatsapp" name="whatsapp" type="tel" required inputmode="numeric" pattern="^\d{10,15}$" placeholder="(55) 9xxxx-xxxx">
+
+            <label for="email">E-mail válido *</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+
+            <label for="objetivo">Para qual área/concurso? *</label>
+            <input id="objetivo" name="objetivo" type="text" required>
+
+            <label for="mensagem">Conte rapidamente seu momento (opcional)</label>
+            <textarea id="mensagem" name="mensagem" rows="3"></textarea>
+
+            <input type="text" name="_hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+
+            <div style="margin:12px 0;">
+              <label style="display:flex;align-items:center;gap:10px;padding: 15px;">
+                <input id="consent" name="consentimento" type="checkbox" required>
+                <span class="muted">Autorizo o contato e o tratamento dos meus dados para fins da mentoria EstudaSina (LGPD).</span>
+              </label>
+            </div>
+
+            <!-- campos hidden para UTM/referrer -->
+            <input type="hidden" id="origem" name="origem">
+            <input type="hidden" id="referrer" name="referrer">
+            <input type="hidden" id="utm_source" name="utm_source">
+            <input type="hidden" id="utm_medium" name="utm_medium">
+            <input type="hidden" id="utm_campaign" name="utm_campaign">
+            <input type="hidden" id="utm_content" name="utm_content">
+            <input type="hidden" id="utm_term" name="utm_term">
+
+            <button id="submitBtn" type="submit" class="btn">
+              <i class="fa-solid fa-clipboard-list"></i> Quero ser Mentorando(a)
+            </button>
+
+            <div id="ok" class="success"><i class="fa-solid fa-check"></i> Recebido! Em breve entraremos em contato no WhatsApp/e-mail.</div>
+            <div id="fail" class="error"><i class="fa-solid fa-circle-exclamation"></i> Ops, não foi possível enviar agora. Tente novamente.</div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+  <!-- ***** Footer Start ***** -->
+  <footer id="contact-us">
+      <div class="container">
+          <div class="footer-content">
+              <div class="row">
+                  <!-- ***** About Sinara ***** -->
+                  <div class="col-lg-6 col-md-12 col-sm-12">
+                      <div class="box-topper">
+                          <h1>Quem é Sinara?</h1>
+                          <p>Sinara sempre foi apaixonada pelos estudos desde muito jovem. Essa dedicação a levou a conquistar - com 22 anos, ainda na faculdade e trabalhando em posto de combustível - seu primeiro cargo efetivo em concurso público.</p> 
+                          <p>Atualmente, estando em licença interesse do referido, ela encontrou um novo propósito de vida: ajudar outras pessoas a transformarem sua forma de estudar e a alcançarem seus objetivos, tornando-as competitivas e, o melhor, sem cometer os mesmos erros que ela cometera no início de sua preparação.</p>
+                          <p>Com essa missão em mente, nasceu o Estuda Sina, um método exclusivo de acompanhamento de três meses que já impactou a vida de inúmeros mentorandos. Por intermédio dele, muitos descobriram como organizar sua rotina de estudos de forma prática e eficiente, aumentando não apenas a disciplina, mas também os percentuais de acerto em provas de concursos públicos e da OAB.</p>
+                          <p>O grande diferencial do trabalho de Sinara está na experiência, na proximidade e na pessoalidade com que conduz cada jornada. Sempre com muito carinho e dedicação, ela oferece uma orientação clara e humana, mostrando que aprovação não é apenas uma meta distante, mas um caminho possível, construído dia após dia com constância, estratégia e sem mimimi.</p>
+                          <p>Hoje – 2025, ela já fora nomeada mais três vezes e conta com inúmeras aprovações em concursos públicos vigentes e, agora, espera você para fazer parte do seu clã</p>
+                          <div class="author">
+                              <i><img src="assets/images/sinara-round.png" alt="Sinara — Estuda Sina"></i>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- ***** Right Content ***** -->
+                  <div class="right-content col-lg-6 col-md-12 col-sm-12">
+                      <h2>Mais sobre o <em>Estuda Sina</em></h2>
+                      <p>Se você deseja transformar a forma como estuda e alcançar resultados consistentes, o Estuda Sina foi feito para você.
+                      No acompanhamento, você aprenderá a:</p>
+                      <ul>
+                          <li>
+                              <i class="fa fa-rocket"></i>
+                              <span class="txt">Utilizar o método Pomodoro para manter o foco e a produtividade;</span>
+                          </li>
+                          <li>
+                              <i class="fa fa-rocket"></i>
+                              <span class="txt">Aplicar as três revisões estratégicas + a lei seca para fixar o conteúdo;</span>
+                          </li>
+                          <li>
+                              <i class="fa fa-rocket"></i>
+                              <span class="txt">Medir e aumentar seu percentual de acertos, acompanhando sua evolução de forma clara e motivadora.</span>
+                              </li>
+                      </ul>
+                          <p>O Estuda Sina não é apenas um método de estudo: é um guia prático que vai te ajudar a organizar a rotina, estudar e revisar com inteligência, além de enxergar resultados reais.</p><p>Entre em contato e venha estudar com quem estuda de verdade!</p><ul class="social">
+                                               <li><a href="https://forms.gle/Frpgv6rPWRUrFA4E8"><i class="fa fa-rocket" aria-label="Mentoria"></i></a></li>
+                                                <li><a href="https://instagram.com/estudasina"><i class="fab fa-instagram" aria-label="Instagram"></i></a></li>
+                                                <li><a href="https://discord.gg/FpabdVdWrj"><i class="fab fa-discord" aria-label="Discord"></i></a></li>
+                                                <li><a href="https://api.whatsapp.com/send/?phone=5555996495662&amp;text=Oi!%20Tenho%20interesse%20na%20mentoria%20do%20Estuda%20Sina.%20Pode%20me%20passar%20mais%20detalhes?&amp;type=phone_number&amp;app_absent=0"><i class="fab fa-whatsapp" aria-label="WhatsApp"></i></a></li>
+                                          </ul>
+                                      </div>
+              </div>
+          </div>
+          <!-- Sub-footer -->
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="sub-footer">
+                      <p>Copyright &copy; 2025 Estuda Sina &middot; Todos os direitos reservados</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+  <iframe name="lead_iframe" style="display:none;"></iframe>
+
+  <!-- JS -->
+    <!-- jQuery -->
+  <script src="assets/js/jquery-2.1.0.min.js"></script>
+  
+  <!-- Bootstrap -->
+  <script src="assets/js/popper.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  
+  <!-- Plugins -->
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/scrollreveal.min.js"></script>
+  <script src="assets/js/waypoints.min.js"></script>
+  <script src="assets/js/jquery.counterup.min.js"></script>
+  <script src="assets/js/imgfix.min.js"></script>
+  
+  <!-- Global Init -->
+  <script src="assets/js/custom.js"></script>
+
+  <script>
+  (function(){
+    const form = document.getElementById('leadForm');
+    const btn = document.getElementById('submitBtn');
+    const ok = document.getElementById('ok');
+    const fail = document.getElementById('fail');
+    const iframe = document.getElementsByName('lead_iframe')[0];
+    const w = document.getElementById('whatsapp');
+
+    const params = new URLSearchParams(location.search);
+    const set = (id,v)=>{const el=document.getElementById(id);if(el) el.value=v||'';};
+    set('origem', location.pathname);
+    set('referrer', document.referrer||'');
+    set('utm_source', params.get('utm_source'));
+    set('utm_medium', params.get('utm_medium'));
+    set('utm_campaign', params.get('utm_campaign'));
+    set('utm_content', params.get('utm_content'));
+    set('utm_term', params.get('utm_term'));
+
+    const onlyDigits = s=>(s||'').replace(/\D+/g,'');
+    function countDigits(str){return (str.match(/\d/g)||[]).length;}
+    function caretIndexForDigitCount(masked,n){
+      if(n<=0)return 0;let d=0;
+      for(let i=0;i<masked.length;i++){if(/\d/.test(masked[i])){d++;if(d===n)return i+1;}}
+      return masked.length;
+    }
+    function formatWhatsapp(val){
+      let v=onlyDigits(val);
+      let hasDDI=v.startsWith('55')&&v.length>11; if(hasDDI)v=v.slice(2);
+      const ddd=v.slice(0,2);const rest=v.slice(2);
+      let p1='',p2='';
+      if(rest.length>5){const split=rest.length>=9?5:4;p1=rest.slice(0,split);p2=rest.slice(split,split+4);} else{p1=rest;}
+      let out=''; if(hasDDI)out+='+55 '; if(ddd)out+=`(${ddd}) `; if(p1)out+=p1; if(p2)out+=`-${p2}`; return out.trim();
+    }
+    function maskPreservingCaret(el){
+      let start=el.selectionStart;const before=el.value;
+      const digitsBeforeCaret=countDigits(before.slice(0,start));
+      const masked=formatWhatsapp(before);el.value=masked;
+      const newCaret=caretIndexForDigitCount(masked,digitsBeforeCaret);
+      try{el.setSelectionRange(newCaret,newCaret);}catch(_){}
+    }
+    ['input','keyup','paste','cut'].forEach(evt=>{w.addEventListener(evt,()=>maskPreservingCaret(w));});
+    maskPreservingCaret(w);
+
+    form.addEventListener('submit',function(ev){
+      ok.style.display='none';fail.style.display='none';
+      const raw=onlyDigits(w.value);w.value=raw;
+      if(!form.checkValidity()){ev.preventDefault();form.reportValidity();w.value=formatWhatsapp(w.value);return;}
+      btn.disabled=true;btn.innerHTML='<i class="fa-solid fa-circle-notch fa-spin"></i> Enviando...';
+    });
+    iframe.addEventListener('load',function(){
+      btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-clipboard-list"></i> Quero ser Mentorando(a)';
+      ok.style.display='block';form.reset();maskPreservingCaret(w);
+    });
+    window.addEventListener('error',function(){
+      btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-clipboard-list"></i> Quero ser Mentorando(a)';fail.style.display='block';
+    });
+  })();
+  </script>
+</body>
+</html>
