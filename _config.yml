@@ -1,0 +1,8 @@
+title: EstudaSina
+description: Testando includes no GitHub Pages
+baseurl: "/estudasina" # deixe vazio se for usar no root, ou "/repositorio" se for num subpath
+url: "https://gustavorosacorrea.github.io"
+show_consent: false
+plugins:
+  - jekyll-seo-tag  # (opcional; permitido no GitHub Pages)
+  - jekyll-sitemap  # (opcional; permitido)
