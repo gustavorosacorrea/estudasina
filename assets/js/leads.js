@@ -1,4 +1,4 @@
- (function(){
+(function(){
 	const form = document.getElementById('leadForm');
 	const btn = document.getElementById('submitBtn');
 	const ok = document.getElementById('ok');
@@ -41,17 +41,27 @@
 	['input','keyup','paste','cut'].forEach(evt=>{w.addEventListener(evt,()=>maskPreservingCaret(w));});
 	maskPreservingCaret(w);
 
+	let submitted = false;
+
 	form.addEventListener('submit',function(ev){
 	  ok.style.display='none';fail.style.display='none';
 	  const raw=onlyDigits(w.value);w.value=raw;
 	  if(!form.checkValidity()){ev.preventDefault();form.reportValidity();w.value=formatWhatsapp(w.value);return;}
 	  btn.disabled=true;btn.innerHTML='<i class="fa-solid fa-circle-notch fa-spin"></i> Enviando...';
+	  submitted = true;
 	});
+
 	iframe.addEventListener('load',function(){
-	  btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-clipboard-list"></i> Quero ser Mentorando(a)';
+	  if(!submitted) return;
+	  submitted = false;
+	  btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-clipboard-list"></i> Enviar informações';
 	  ok.style.display='block';form.reset();maskPreservingCaret(w);
+	  if (typeof fbq === 'function') {
+	    fbq('track','Lead');
+	  }
 	});
+
 	window.addEventListener('error',function(){
-	  btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-clipboard-list"></i> Quero ser Mentorando(a)';fail.style.display='block';
+	  btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-clipboard-list"></i> Enviar informações';fail.style.display='block';
 	});
-  })();
+})();
