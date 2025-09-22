@@ -787,7 +787,7 @@ about
   position: absolute;
   top: 15px;
   left: 45px;
-  font-size: 100px;
+  font-size: 80px;
   font-weight: 600;
   color: #fdefe9;
 }
@@ -796,6 +796,7 @@ about
   z-index: 10;
   position: relative;
   max-width: 100%;
+  width: 90px;
   margin-bottom: 40px;
 }
 
@@ -850,6 +851,7 @@ promotion
   display: inline-block;
   float: left;
   margin-right: 30px;
+  width: 100px;
 }
 
 #promotion .right-text h4 {

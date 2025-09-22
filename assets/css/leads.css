@@ -104,10 +104,41 @@ padding-top: 0px;
 }
 .success{background:#e6f6ff;color:#0b568a;border:1px solid #bfe6ff}
 .error{background:#ffe8e5;color:#8a2f2f;border:1px solid #ffd0c9}
-.logoRow{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.logoRow{display:flex;align-items:center;gap:12px;margin-bottom:10px;margin-top: 20px;}
 .logoRow img{width:40px;height:40px;border-radius:10px}
 .footnote{margin-top:10px;font-size:.86rem;color:var(--muted)}
 .container-btn {
     text-align: center;
     margin-top: 15px;
+}
+.scarcity {
+    position: absolute;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    top: 10px;
+    align-items: center;
+}
+
+.scarcity-badge {
+    font-size: 13px;
+    padding: 5px 10px;
+    background: linear-gradient(45deg, #f15569, #f48040);
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.vacancy {
+    font-size: 12px;
+}
+.free-subscription {
+    font-size: 13px;
+    color: #229a50;
+    font-weight: bold;
+}
+
+.badge-block {
+    display: flex;
+    flex-direction: column;
 }
