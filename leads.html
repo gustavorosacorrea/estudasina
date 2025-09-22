@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <script src="assets/js/pixel.js"></script>
@@ -69,66 +72,7 @@
       </div>
   </header>
   <!-- ***** Header Area End ***** -->
-  <main class="wrap">
-    <div class="card">
-      <section class="hero">
-        <div class="logoRow">
-          <img src="assets/images/sinara-round.png" alt="EstudaSina">
-          <span class="badge">Mentoria EstudaSina</span>
-        </div>
-        <h1>Acompanhamento individual por 3 meses</h1>
-        <p>Metas claras, feedbacks semanais e cronograma personalizado — até a aprovação. Preencha para entrar na lista e receber os próximos passos.</p>
-      </section>
-
-      <section class="grid">
-        <div>
-          <form id="leadForm" class="form" action="https://script.google.com/macros/s/AKfycbzWanQIym2Y2jC_zOnKR9eHNg2gianjw5qH6a_p1JVrXHqSHwGGlOCRhnnvCuB0xYX4BA/exec" method="POST" target="lead_iframe" novalidate>
-            <label for="nome">Nome completo *</label>
-            <input id="nome" name="nome" type="text" autocomplete="name" required>
-
-            <label for="whatsapp">Telefone (WhatsApp) *</label>
-            <input id="whatsapp" name="whatsapp" type="tel" required inputmode="numeric" pattern="^\d{10,15}$" placeholder="(55) 9xxxx-xxxx">
-
-            <label for="email">E-mail válido *</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
-
-            <label for="objetivo">Para qual área/concurso? *</label>
-            <input id="objetivo" name="objetivo" type="text" required>
-
-            <label for="mensagem">Conte rapidamente seu momento (opcional)</label>
-            <textarea id="mensagem" name="mensagem" rows="3"></textarea>
-
-            <input type="text" name="_hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
-
-            <div style="margin:12px 0;">
-              <label style="display:flex;align-items:center;gap:10px;padding: 15px;">
-                <input id="consent" name="consentimento" type="checkbox" required>
-                <span class="muted">Autorizo o contato e o tratamento dos meus dados para fins da mentoria EstudaSina (LGPD).</span>
-              </label>
-            </div>
-
-            <!-- campos hidden para UTM/referrer -->
-            <input type="hidden" id="origem" name="origem">
-            <input type="hidden" id="referrer" name="referrer">
-            <input type="hidden" id="utm_source" name="utm_source">
-            <input type="hidden" id="utm_medium" name="utm_medium">
-            <input type="hidden" id="utm_campaign" name="utm_campaign">
-            <input type="hidden" id="utm_content" name="utm_content">
-            <input type="hidden" id="utm_term" name="utm_term">
-
-            <div class="container-btn">
-                <button id="submitBtn" type="submit" class="btn-form">
-                    <i class="fa-solid fa-clipboard-list"></i> Enviar informações
-                </button>
-            </div>
-
-            <div id="ok" class="success"><i class="fa-solid fa-check"></i> Recebido! Em breve entraremos em contato no WhatsApp/e-mail.</div>
-            <div id="fail" class="error"><i class="fa-solid fa-circle-exclamation"></i> Ops, não foi possível enviar agora. Tente novamente.</div>
-          </form>
-        </div>
-      </section>
-    </div>
-  </main>
+    {% include form-leads.html %}
   <!-- ***** Footer Start ***** -->
   <footer id="contact-us">
       <div class="container">
