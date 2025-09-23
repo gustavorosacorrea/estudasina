@@ -1314,6 +1314,9 @@ preloader
     align-items: center;
     justify-content: space-evenly;
   }
+  #about{
+    margin-top: 70px;
+  }
 }
 
 
