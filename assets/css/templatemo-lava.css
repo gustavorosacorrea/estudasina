@@ -139,6 +139,9 @@ body {
     margin-top: 30px;
     margin-bottom: 0px;
   }
+  .welcome-area .header-text {
+      margin-left: 0 !important;
+  }
   .mobile-bottom-fix {
     margin-bottom: 30px;
     padding: 0 30px;
@@ -658,6 +661,11 @@ header
   .header-area .main-nav .nav {
     display: flex !important;
   }
+  .welcome-area .header-text .left-text {
+      max-width: 50%;
+      text-align: center;
+      margin-top: 26%;
+  }
 }
 
 .box-topper h1 { text-align: left; }
@@ -722,8 +730,9 @@ color: #191a20;
     margin-top: 50%;
   }
   .welcome-area .header-text {
-    width: 50%;
-    margin-left: 5%;
+        width: 60%;
+        margin-left: 5%;
+        padding-top: 20px;
   }
 }
 
@@ -1318,5 +1327,18 @@ preloader
     margin-top: 70px;
   }
 }
-
+@media (max-width: 1140px) and (min-width: 992px) {
+    .welcome-area .header-text {
+        width: 100%;
+        text-align: center;
+        padding-top: 100px;
+    }
+    .welcome-area {
+        background-position: right 23%;
+        background-size: 450px;
+    }
+    .header-area .main-nav .nav {
+        width: 100%;
+    }
+}
 
