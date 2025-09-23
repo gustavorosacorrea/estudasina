@@ -1301,4 +1301,19 @@ preloader
 
 .header-offer .subtitle {
   font-size: 15px;
+}
+@media (min-width: 768px){
+  .features-item {
+    height: 620px;
+    margin-bottom: 50px;
+  }
+  .features-icon {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 }
+
+
