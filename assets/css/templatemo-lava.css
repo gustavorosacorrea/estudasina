@@ -793,11 +793,11 @@ about
 }
 
 .features-item img {
-  z-index: 10;
-  position: relative;
-  max-width: 100%;
-  width: 90px;
-  margin-bottom: 40px;
+    z-index: 10;
+position: relative;
+max-width: 100%;
+width: 130px;
+margin-bottom: 10px;
 }
 
 .features-item h4 {
