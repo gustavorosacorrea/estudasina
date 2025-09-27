@@ -121,7 +121,7 @@
         <form id="leadForm" class="form" action="https://script.google.com/macros/s/AKfycbzWanQIym2Y2jC_zOnKR9eHNg2gianjw5qH6a_p1JVrXHqSHwGGlOCRhnnvCuB0xYX4BA/exec" method="POST" target="lead_iframe" novalidate>
           <div class="field">
             <label for="nome">Nome</label>
-            <input id="nome" name="name" type="text" placeholder="Seu nome completo" required>
+            <input id="nome" name="nome" type="text" placeholder="Seu nome completo" required>
           </div>
           <div class="field">
             <label for="email">E-mail</label>
@@ -152,6 +152,50 @@
           <div id="ok" class="success"><i class="fa-solid fa-check"></i> Recebido! Em breve entraremos em contato no WhatsApp/e-mail.</div>
           <div id="fail" class="error"><i class="fa-solid fa-circle-exclamation"></i> Ops, não foi possível enviar agora. Tente novamente.</div>
         </form>
+      </div>
+    </section>
+    <section class="faq-section" aria-labelledby="faq-title">
+      <div class="faq-container">
+        <h3 id="faq-title">Perguntas Frequentes</h3>
+    
+        <details class="faq-item">
+          <summary><i class="fa-solid fa-circle-question"></i> Funciona para qualquer concurso ou só para a OAB?</summary>
+          <div class="faq-content">
+            <p>O Método EstudaSina já ajudou alunos na preparação tanto para a OAB quanto para diversos concursos públicos — federais, estaduais e municipais. O acompanhamento é personalizado, adaptado à sua meta específica.</p>
+          </div>
+        </details>
+    
+        <details class="faq-item">
+          <summary><i class="fa-solid fa-clock"></i> Funciona para concursos federais ou apenas estaduais e municipais?</summary>
+          <div class="faq-content">
+            <p>Sim! O Método EstudaSina é flexível e já foi aplicado em concursos de todas as esferas. Se o seu objetivo é um concurso federal de alta concorrência ou um certame municipal, o acompanhamento será ajustado para a sua meta específica.</p>
+          </div>
+        </details>
+    
+        <details class="faq-item">
+          <summary><i class="fa-solid fa-user-group"></i> Preciso ter muitas horas livres para aproveitar a mentoria?</summary>
+          <div class="faq-content">
+            <p>Não. O cronograma é construído de acordo com a sua rotina, mesmo que você tenha pouco tempo disponível por dia. Com foco no essencial e técnicas como o Pomodoro, você consegue evoluir de forma constante.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary><i class="fa-solid fa-user-group"></i> Como funciona o acompanhamento individual?</summary>
+          <div class="faq-content">
+            <p>Você recebe metas semanais personalizadas, revisadas pela mentora Sinara, aprovada em mais de 12 concursos. Além disso, terá acesso à salinha de estudos, um espaço exclusivo para trocar experiências com outros alunos.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary><i class="fa-solid fa-user-group"></i> O método garante aprovação?</summary>
+          <div class="faq-content">
+            <p>Não oferecemos garantias de aprovação, porque o resultado depende do seu esforço e contexto. O que garantimos é uma estrutura de estudo clara, com cronograma, técnicas de memorização e acompanhamento próximo — fatores que aumentam suas chances de aprovação.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary><i class="fa-solid fa-user-group"></i> Como faço para garantir minha vaga?</summary>
+          <div class="faq-content">
+            <p>Basta preencher o formulário nesta página. A inscrição é gratuita e as vagas são limitadas a 8 por mês, para que cada aluno receba atenção individual. Após a inscrição, você recebe os próximos passos no seu e-mail e WhatsApp.</p>
+          </div>
+        </details>
       </div>
     </section>
     <section class="mentor-section" aria-labelledby="mentor-title">
@@ -283,5 +327,81 @@
   </p>
   <p style="margin-top:12px; font-size:12px; color:#6c7a92;">© 2025 EstudaSina — Todos os direitos reservados.</p>
 </footer>
+
+<style>
+  .faq-section {
+    background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.04));
+    border-top: 1px solid rgba(255,255,255,.08);
+    padding: 60px 20px;
+    margin-top: 60px;
+  }
+  
+  .faq-container { max-width: 800px; margin: 0 auto; color: #e6eaf2; }
+  .faq-section h3 { font-size: 24px; text-align: center; margin-bottom: 26px; color: #5eead4; }
+  
+  .faq-item {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 12px;
+    margin: 10px 0;
+    overflow: hidden; /* bordas limpas */
+  }
+  
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 16px;
+    color: #fff;
+    display: flex; align-items: center; gap: 10px;
+    outline: none;
+    user-select: none;
+  }
+  
+  .faq-item summary::-webkit-details-marker { display: none; }
+  
+  .faq-item[open] summary {
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    background: rgba(255,255,255,.02);
+  }
+  
+  .faq-item .faq-content {
+    padding: 14px 16px;
+    color: #cfd8e6;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  
+  /* Indicador visual (seta) usando pseudo-elemento */
+  .faq-item summary::after {
+    content: "\f078"; /* fa-chevron-down */
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
+    margin-left: auto;
+    transition: transform .2s ease;
+    opacity: .9;
+  }
+  .faq-item[open] summary::after { transform: rotate(180deg); }
+  
+  /* Mobile */
+  @media (max-width: 700px) {
+    .faq-section h3 { font-size: 20px; }
+    .faq-item summary { font-size: 15px; padding: 12px 14px; }
+    .faq-item .faq-content { font-size: 14px; padding: 12px 14px; }
+  }
+
+</style>
+<script>
+  document.addEventListener('click', function(e) {
+    const el = e.target.closest('details.faq-item');
+    if (!el) return;
+    // fecha os demais quando um abre
+    if (!el.open) {
+      document.querySelectorAll('details.faq-item[open]').forEach(d => {
+        if (d !== el) d.removeAttribute('open');
+      });
+    }
+  });
+</script>
 
 </html>
