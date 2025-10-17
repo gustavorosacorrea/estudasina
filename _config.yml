@@ -3,3 +3,4 @@ description: Testando includes no GitHub Pages
 baseurl: "" # deixe vazio se for usar no root, ou "/repositorio" se for num subpath
 url: "https://gustavorosacorrea.github.io"
 show_consent: false
+upsell: false

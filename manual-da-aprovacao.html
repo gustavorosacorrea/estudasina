@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://seudominio.com/assets/ebook-cover.jpg" />
 
   <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" href="assets/images/favicon.ico" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
   <!-- Fonts -->
@@ -367,9 +367,9 @@
           <details>
             <summary>Páginas de amostra</summary>
             <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px">
-              <img loading="lazy" alt="Amostra de página 1" src="assets/images/Capa-Ebook-Estudasina-Nova.png">
-              <img loading="lazy" alt="Amostra de página 2" src="assets/images/Capa-Ebook-Estudasina-Nova.png">
-              <img loading="lazy" alt="Amostra de página 3" src="assets/images/Capa-Ebook-Estudasina-Nova.png">
+              <img loading="lazy" alt="Amostra de página 1" src="assets/images/ebook-cover.jpg">
+              <img loading="lazy" alt="Amostra de página 2" src="assets/images/ebook-sumary.jpg">
+              <img loading="lazy" alt="Amostra de página 3" src="assets/images/ebook-cap-1.jpg">
             </div>
           </details>
         </div>
@@ -417,6 +417,7 @@
             </div>
           </div>
         </div>
+        {% if site.upsell %}
         <div class="card price-card">
           <h3 style="margin:0 0 10px">Oferta especial (opcional)</h3>
           <p class="section-sub">Adicione após a compra (upsell): <b>Mentoria Express 1:1 (30 min)</b> para destravar seu plano com acompanhamento.</p>
@@ -427,6 +428,7 @@
           </ul>
           <div style="margin-top:12px"><i>* Configure como upsell dentro da Kiwify.</i></div>
         </div>
+        {% endif %}
       </div>
     </section>
 
