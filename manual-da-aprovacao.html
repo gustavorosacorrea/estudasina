@@ -41,12 +41,6 @@
     img{max-width:100%;display:block}
     .container{width:min(1140px, 92%);margin:0 auto}
     .grid{display:grid;gap:28px;align-items: center;}
-    @media screen and (max-width: 767px) {
-        .container.grid {
-            display: flex;
-            flex-direction: column;
-        }
-    }
 
     /* Header */
     header{position:sticky;top:0;z-index:30;background:linear-gradient(180deg, rgba(11,18,32,.95), rgba(11,18,32,.65) 70%, rgba(11,18,32,0));backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(255,255,255,.05)}
@@ -246,6 +240,59 @@
         margin: 10px 0;
         color: var(--muted);
     }
+    #garantia .card.price-card {
+        background: radial-gradient(#ffffff, #dadada);
+        color: #222222;
+        position: relative;
+    }
+    
+    #garantia .guarantee {
+        background: rgb(34 197 94 / 39%);
+        color: #0000009c;
+    }
+    
+#garantia .badge-save {
+        background: linear-gradient(135deg, #3c3c3c, #313131);
+        color: #ffffff;
+        border: 0;
+        margin: 0;
+        padding: 10px 15px;
+    }
+    .block-image-offer img {
+        width: 150px;
+    }
+    
+    .block-image-offer {
+        position: absolute;
+        right: 5%;
+        z-index: 0;
+        top: 15%;
+    }
+    
+    .price {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .section-sub {
+        width: 53%;
+    }
+    @media screen and (max-width: 767px) {
+        .container.grid {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    @media screen and (max-width: 347px) {
+        .block-image-offer img {
+           width: 120px;
+        }
+    }
+    @media screen and (max-width: 315px) {
+        .block-image-offer img {
+           width: 100px;
+        }
+    }
 
   </style>
 
@@ -381,7 +428,7 @@
     <!-- PARA QUEM É / NÃO É -->
     <section>
       <div class="container grid" style="grid-template-columns:1fr 1fr">
-        <div class="card" style="padding:22px">
+        <div class="card" style="width: 100%;height: 100%;padding:22px">
           <h3>Para quem é</h3>
           <ul>
             <li>Quem quer estudar com foco e constância</li>
@@ -389,7 +436,7 @@
             <li>Quem busca um método claro para concursos, OAB e provas</li>
           </ul>
         </div>
-        <div class="card" style="padding:22px">
+        <div class="card" style="width: 100%;height: 100%;padding:22px">
           <h3>Para quem não é</h3>
           <ul>
             <li>Quem procura uma fórmula mágica</li>
@@ -404,7 +451,10 @@
     <section id="garantia">
       <div class="container pricing">
         <div class="card price-card">
-          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
+          <div class="block-image-offer">
+            <img loading="lazy" alt="Oferta Manual da Aprovação Concurso Público e OAB" src="assets/images/Capa-Ebook-Estudasina-Nova.png">
+          </div>
+          <div style="display: flex ; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; align-items: flex-start; flex-direction: column;">
             <h3 style="margin:0">Manual do Concurseiro Imparável</h3>
             <span class="badge-save">Lançamento</span>
           </div>
@@ -415,7 +465,7 @@
             <div style="font-size:22px">🛡️</div>
             <div>
               <b>Garantia incondicional de 7 dias.</b>
-              <div style="color:#c7f3d7">Se não gostar por qualquer motivo, é só pedir reembolso. Sem burocracia.</div>
+              <div style="color:#00000070">Se não gostar por qualquer motivo, é só pedir reembolso. Sem burocracia.</div>
             </div>
           </div>
         </div>
@@ -430,6 +480,13 @@
           </ul>
           <div style="margin-top:12px"><i>* Configure como upsell dentro da Kiwify.</i></div>
         </div>
+        {% else %}
+        <style>
+          .pricing {
+              display: flex;
+              justify-content: center;
+          }
+        </style>
         {% endif %}
       </div>
     </section>
