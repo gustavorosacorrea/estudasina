@@ -150,10 +150,10 @@
           <input type="hidden" id="utm_content" name="utm_content">
           <input type="hidden" id="utm_term" name="utm_term">
           
-          <div id="ok" style="display: none;" class="alert hidden alert--success">
+          <div id="ok" class="alert hidden alert--success">
             <i class="fa-solid fa-check"></i> Recebido! Em breve entraremos em contato no WhatsApp/e-mail.
           </div>
-          <div id="fail" style="display: none;" class="alert hidden alert--error">
+          <div id="fail" class="alert hidden alert--error">
             <i class="fa-solid fa-circle-exclamation"></i> Ops, não foi possível enviar agora. Tente novamente.
           </div>
         </form>
@@ -224,6 +224,7 @@
       </div>
     </section>
     <style>
+      .hidden { display: none !important;}
       .mentor-section {
         background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.04));
         border-top: 1px solid rgba(255,255,255,.08);

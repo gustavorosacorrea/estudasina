@@ -55,13 +55,13 @@
 	  if(!submitted) return;
 	  submitted = false;
 	  btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-clipboard-list"></i> Enviar informações';
-	  ok.style.display='block';form.reset();maskPreservingCaret(w);
+	  ok.classList.remove('hidden');ok.style.display='block';form.reset();maskPreservingCaret(w);
 	  if (typeof fbq === 'function') {
 	    fbq('track','Lead');
 	  }
 	});
 
 	window.addEventListener('error',function(){
-	  btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-clipboard-list"></i> Enviar informações';fail.style.display='block';
+	  btn.disabled=false;btn.innerHTML='<i class="fa-solid fa-clipboard-list"></i> Enviar informações';fail.classList.remove('hidden');fail.style.display='block';
 	});
 })();
