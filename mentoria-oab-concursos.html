@@ -36,19 +36,19 @@
       border-radius: 100%;
       box-shadow: 0px 0px 18px rgb(30 232 186 / 55%);
     }
-    .success {
+    .alert--success {
       background: #ccffd6;
       color: #2cac19;
       border: 1px solid #179d32;
     }
-    .success, .error {
+    .alert--success, .alert--error {
       display: none;
       margin-top: 14px;
       padding: 12px 14px;
       border-radius: 12px;
       font-weight: 600;
     }
-    .error {
+    .alert--error {
       background: #ffe8e5;
       color: #8a2f2f;
       border: 1px solid #ffd0c9;
@@ -81,6 +81,8 @@
     .disclaimer{font-size:11px;color:var(--muted);margin-top:10px}
     .pill{display:inline-flex;gap:6px;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:12px}
     .count{display:inline-flex;gap:10px;align-items:center;font-weight:700;color:var(--danger)}
+    /* ALERTS blindados */
+    .alert[hidden] { display: none !important; }
   </style>
 </head>
 <body>
@@ -149,8 +151,12 @@
           <input type="hidden" id="utm_content" name="utm_content">
           <input type="hidden" id="utm_term" name="utm_term">
           
-          <div id="ok" style="display: none;" class="success"><i class="fa-solid fa-check"></i> Recebido! Em breve entraremos em contato no WhatsApp/e-mail.</div>
-          <div id="fail" style="display: none;" class="error"><i class="fa-solid fa-circle-exclamation"></i> Ops, não foi possível enviar agora. Tente novamente.</div>
+          <div id="ok"   class="alert alert--success">
+            <i class="fa-solid fa-check"></i> Recebido! Em breve entraremos em contato no WhatsApp/e-mail.
+          </div>
+          <div id="fail" class="alert alert--error">
+            <i class="fa-solid fa-circle-exclamation"></i> Ops, não foi possível enviar agora. Tente novamente.
+          </div>
         </form>
       </div>
     </section>
