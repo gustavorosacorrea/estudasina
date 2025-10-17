@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Método Estuda Sina — Manual do Concurseiro Imparável</title>
+  <meta name="description" content="Manual prático para concursos: metas claras, técnicas de memorização, gestão do tempo, controle emocional e mentalidade do concurseiro imparável. Por Sinara Fernanda Kochenborger." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Método Estuda Sina — Manual do Concurseiro Imparável" />
+  <meta property="og:description" content="Plano de estudos, revisão inteligente e disciplina: tudo para você estudar com leveza e constância até a aprovação." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://seudominio.com/manual-concurseiro-imparavel" />
+  <meta property="og:image" content="https://seudominio.com/assets/ebook-cover.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f172a;
+      --muted:#9aa4b2;
+      --text:#f8fafc;
+      --brand: #5eead4;
+      --brand-2: #22d3ee;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1140px, 92%);margin:0 auto}
+    .grid{display:grid;gap:28px;align-items: center;}
+    @media screen and (max-width: 767px) {
+        .container.grid {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    /* Header */
+    header{position:sticky;top:0;z-index:30;background:linear-gradient(180deg, rgba(11,18,32,.95), rgba(11,18,32,.65) 70%, rgba(11,18,32,0));backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(255,255,255,.05)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .logo{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.2px}
+    .logo-mark { width: 100px; border-radius: 8px; margin-right: 10px; display: grid ; place-items: center; color: #031a10; font-weight: 900; }
+    .nav-cta{display:flex;gap:12px;align-items:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:12px;font-weight:700;border:1px solid transparent;transition:.25s all;box-shadow:var(--shadow)}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#031a10}
+    .btn-primary:hover{transform:translateY(-1px)}
+    .btn-ghost{border-color:rgba(255,255,255,.12);color:var(--text);background:rgba(255,255,255,.02)}
+
+    /* Hero */
+    .hero{padding:64px 0 24px}
+    .hero .container{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
+    .badge{display:inline-flex;gap:8px;align-items:center;background:rgba(34,197,94,.12);color:#bff1cf;border:1px solid rgba(34,197,94,.3);padding:6px 10px;border-radius:999px;font-weight:600;font-size:12px}
+    .headline{font-size:clamp(28px,6vw,48px);line-height:1.06;margin:10px 0 14px}
+    .subhead{font-size:clamp(16px,2.6vw,19px);color:var(--muted);max-width:52ch}
+    .bullets{display:grid;gap:10px;margin:22px 0}
+    .bullets li{list-style:none;display:flex;gap:10px;align-items:flex-start}
+    .bullets .check{flex:0 0 22px;height:22px;border-radius:6px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#012016;display:grid;place-items:center;font-weight:900}
+    .cover{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,0));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:14px}
+    .cover img{border-radius:14px}
+
+    /* Sections */
+    section{padding:56px 0}
+    .cover.card { background: radial-gradient(#dfdfdf, #ffffff); }
+    .card{    background: radial-gradient(#111b2f, #131e34);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .section-title{font-size:28px;margin:0 0 10px}
+    .section-sub{color:var(--muted);margin:0 0 24px}
+
+    .features{grid-template-columns:repeat(3,1fr)}
+    .feat{padding:22px;border-radius:16px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02)}
+    .feat h4{margin:8px 0 6px}
+    .feat p{color:var(--muted);margin:0}
+
+    /* What you get */
+    .get{grid-template-columns:1.1fr .9fr}
+    .get ul{margin:0;padding-left:18px}
+    .get li{margin:10px 0;color:var(--muted)}
+
+    /* Pricing */
+    .pricing{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .price-card{padding:26px}
+    .price{font-size:46px;font-weight:800}
+    .price small{font-size:14px;color:var(--muted);font-weight:600}
+    .badge-save{display:inline-block;background:rgba(6,182,212,.15);border:1px solid rgba(6,182,212,.35);color:#a8f3ff;padding:6px 10px;border-radius:999px;font-weight:700;margin-left:10px}
+    .guarantee{display:flex;gap:14px;align-items:flex-start;background:rgba(34,197,94,.08);border:1px dashed rgba(34,197,94,.45);padding:14px;border-radius:14px;color:#bff1cf}
+
+    /* Testimonials */
+    .testimonials{grid-template-columns:repeat(3,1fr)}
+    .depo{padding:18px}
+    .depo p{color:#d9e1ea}
+
+    /* FAQ */
+    details{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);padding:16px;border-radius:14px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:700}
+    summary::-webkit-details-marker{display:none}
+
+    /* Author */
+    .author{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center}
+    .author img{width:120px;height:120px;border-radius:18px;object-fit:cover;border:2px solid rgba(255,255,255,.12)}
+
+    /* Footer */
+    footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.06)}
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
+
+    /* Sticky CTA (mobile) */
+    .sticky-cta{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);width:min(680px,94%);background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#021a11;border-radius:999px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 16px;z-index:50}
+    .sticky-cta b{font-size:14px}
+    .sticky-cta a{background:#021a11;color:#d3f7e4;padding:10px 14px;border-radius:999px;font-weight:800}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero .container{grid-template-columns:1fr}
+      .features{grid-template-columns:1fr}
+      .get{grid-template-columns:1fr}
+      .pricing{grid-template-columns:1fr}
+      .testimonials{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+    }
+    .subtitle {
+        padding: 0;
+        margin-top: -10px;
+        color: #ffffff;
+        font-weight: bold;
+    }
+    .mentor-section {
+        background: linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(255, 255, 255, .04));
+        border-top: 1px solid rgba(255, 255, 255, .08);
+        padding: 60px 20px;
+        margin-top: 60px;
+        text-align: center;
+    }
+    .mentor-section h3 {
+        font-size: 22px;
+        margin-bottom: 12px;
+        color: #5eead4;
+    }
+    
+    .mentor-photo {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+        border: 3px solid #123f47;
+        box-shadow: 0 8px 20px rgba(34, 211, 238, .25);
+        margin: 0 auto 20px;
+    }
+    .mentor-container {
+        max-width: 720px;
+        margin: 0 auto;
+        color: #e6eaf2;
+    }
+    .mentor-section p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin: 6px 0;
+        color: #cfd8e6;
+    }
+    .mentor-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin: 16px 0 8px;
+    }
+    .stat {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, .06);
+        border: 1px solid rgba(255, 255, 255, .12);
+        font-size: 13px;
+        color: #e6eaf2;
+    }
+    .disclaimer {
+        font-size: 12px;
+        color: #93a4bd;
+        margin-top: 10px;
+    }
+    .disclaimer {
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 10px;
+    }
+    @media (max-width: 700px) {
+        .mentor-section h3 {
+            font-size: 20px;
+        }
+            .mentor-stats {
+            grid-template-columns: 1fr;
+        }
+            .mentor-section p {
+            font-size: 14px;
+        }
+    }
+    
+    .container-mentor {
+        padding: 0 30px;
+        max-width: 1200px;
+        margin: auto;
+    }
+    .mentor-section p strong {
+        color: #fff;
+    }
+    .card.ebook {
+        width: 100%;
+        margin: auto;
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .card.ebook img {max-height: 400px;}
+    .toc {
+        padding: 18px;
+        width: 100%;
+        background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+    }
+    .toc details {
+        background: rgba(255, 255, 255, .02);
+        border: 1px solid rgba(255, 255, 255, .08);
+        padding: 14px;
+        border-radius: 14px;
+        margin-bottom: 10px;
+    }
+    .toc summary {
+        font-weight: 700;
+        cursor: pointer;
+    }
+    .inside li {
+        margin: 10px 0;
+        color: var(--muted);
+    }
+
+  </style>
+
+  <!-- JSON-LD Product Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Método Estuda Sina — Manual do Concurseiro Imparável",
+    "image": ["https://seudominio.com/assets/ebook-cover.jpg"],
+    "description": "Manual prático para concursos: metas claras, técnicas de memorização, gestão do tempo, controle emocional e mentalidade do concurseiro imparável.",
+    "brand": {"@type":"Brand","name":"Estuda Sina"},
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "BRL",
+      "price": "49.00",
+      "url": "https://kiwify.app/checkout/SEU-LINK?utm_source={{site_source_name}}&utm_medium={{adset.name}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{placement}}&utm_id={{campaign.id}}",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- Pixel / GTM placeholders -->
+  <!-- <script>/* GTM/Pixel aqui */</script> -->
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#top">
+        <span class="logo-mark">
+          <img src="assets/images/Logo-ES-branco.png">  
+        </span>
+      </a>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="#conteudo">O que você recebe</a>
+        <a class="btn btn-primary" href="https://kiwify.app/checkout/SEU-LINK" target="_blank" rel="noopener">Quero o manual</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container">
+        <div>
+          <span class="badge">NOVO • Método aplicado em concursos e OAB</span>
+          <h1 class="headline">Manual da <span style="background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">Aprovação</span></h1>
+          <p class="subtitle">Torne-se um concurseiro imparável!</p>
+          <p class="subhead">Um manual direto ao ponto com metas claras, técnicas de memorização, gestão do tempo, controle emocional e a mentalidade para você manter constância até a aprovação.</p>
+          <ul class="bullets">
+            <li><span class="check">✓</span> Defina metas específicas, mensuráveis e realistas</li>
+            <li><span class="check">✓</span> Memorização: revisão por estudo reverso, parcial e “tudão”</li>
+            <li><span class="check">✓</span> Cronograma semanal que cabe na sua rotina</li>
+            <li><span class="check">✓</span> Ansiedade sob controle e motivação sustentável</li>
+            <li><span class="check">✓</span> Mentalidade de quem não desiste até passar</li>
+          </ul>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 8px">
+            <a class="btn btn-primary" href="https://kiwify.app/checkout/SEU-LINK?utm_source={{site_source_name}}&utm_medium={{adset.name}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{placement}}&utm_id={{campaign.id}}" target="_blank" rel="noopener">Comprar agora — R$ 49</a>
+            <a class="btn btn-ghost" href="#garantia">Garantia de 7 dias</a>
+          </div>
+        </div>
+        <div>
+          <div class="cover card">
+            <img src="assets/images/cover-ebook-estuda-sina.png" alt="Capa do Manual do Concurseiro Imparável">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES / BENEFÍCIOS -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">Por que este manual funciona</h2>
+        <p class="section-sub">Nada de teoria infinita. Você recebe um método enxuto com exemplos e modelos aplicáveis no primeiro dia.</p>
+        <div class="grid features">
+          <div class="feat card">
+            <h4>Metas que guiam sua semana</h4>
+            <p>Objetivos SMART: específicos, mensuráveis e realistas para manter foco e motivação.</p>
+          </div>
+          <div class="feat card">
+            <h4>Revisão que fixa de verdade</h4>
+            <p>Estudo reverso, revisão parcial e revisão completa (“tudão”) — use cada uma no momento certo.</p>
+          </div>
+          <div class="feat card">
+            <h4>Tempo sob controle</h4>
+            <p>Cronograma semanal realista, com pausas (Pomodoro) e equilíbrio estudo‑lazer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O QUE VOCÊ VAI RECEBER -->
+    <section id="conteudo">
+      <div class="container grid get">
+        <div>
+          <h2 class="section-title">O que você vai receber</h2>
+          <ul>
+            <li>✔ Manual completo em PDF com passo a passo</li>
+            <li>✔ Cap. 1 — Metas claras (definição, realismo e monitoramento)</li>
+            <li>✔ Cap. 2 — Memorização (repetição, revisão espaçada e tipos de revisão)</li>
+            <li>✔ Cap. 3 — Gestão do tempo (planejamento, metas e cronograma fiel)</li>
+            <li>✔ Cap. 4 — Controle emocional (ansiedade, motivação e concentração)</li>
+            <li>✔ Cap. 5 — Hábitos e comunidade (rotina sustentável e rede de apoio)</li>
+            <li>✔ Cap. 6 — Mentalidade do concurseiro imparável</li>
+            <li>✔ Bônus: Acesso a salinha de estudos ao vivo</li>
+            <li>✔ Atualizações do manual por 12 meses</li>
+          </ul>
+        </div>
+<div class="card toc">
+          <details open="">
+            <summary>Prévia do Sumário</summary>
+            <ol>
+              <li>Definindo Metas Claras</li>
+              <li>Técnicas de Memorização Eficazes</li>
+              <li>Gestão do Tempo nos Estudos</li>
+              <li>Controle Emocional Durante a Preparação</li>
+              <li>Práticas do dia a dia</li>
+              <li>Seja um Concurseiro Imparável</li>
+            </ol>
+          </details>
+          <details>
+            <summary>Páginas de amostra</summary>
+            <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px">
+              <img loading="lazy" alt="Amostra de página 1" src="assets/images/Capa-Ebook-Estudasina-Nova.png">
+              <img loading="lazy" alt="Amostra de página 2" src="assets/images/Capa-Ebook-Estudasina-Nova.png">
+              <img loading="lazy" alt="Amostra de página 3" src="assets/images/Capa-Ebook-Estudasina-Nova.png">
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARA QUEM É / NÃO É -->
+    <section>
+      <div class="container grid" style="grid-template-columns:1fr 1fr">
+        <div class="card" style="padding:22px">
+          <h3>Para quem é</h3>
+          <ul>
+            <li>Quem quer estudar com foco e constância</li>
+            <li>Quem precisa equilibrar trabalho, família e estudo</li>
+            <li>Quem busca um método claro para concursos, OAB e provas</li>
+          </ul>
+        </div>
+        <div class="card" style="padding:22px">
+          <h3>Para quem não é</h3>
+          <ul>
+            <li>Quem procura uma fórmula mágica</li>
+            <li>Quem não pretende aplicar o método</li>
+            <li>Quem quer um conteúdo puramente teórico</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREÇO / GARANTIA -->
+    <section id="garantia">
+      <div class="container pricing">
+        <div class="card price-card">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
+            <h3 style="margin:0">Manual do Concurseiro Imparável</h3>
+            <span class="badge-save">Lançamento</span>
+          </div>
+          <div class="price">R$ 49 <small>à vista no Pix</small></div>
+          <p class="section-sub">Ou em até 12x no cartão pelo checkout Kiwify.</p>
+          <a class="btn btn-primary" style="margin-top:8px" href="https://kiwify.app/checkout/SEU-LINK" target="_blank" rel="noopener">Quero agora</a>
+          <div class="guarantee" style="margin-top:16px">
+            <div style="font-size:22px">🛡️</div>
+            <div>
+              <b>Garantia incondicional de 7 dias.</b>
+              <div style="color:#c7f3d7">Se não gostar por qualquer motivo, é só pedir reembolso. Sem burocracia.</div>
+            </div>
+          </div>
+        </div>
+        <div class="card price-card">
+          <h3 style="margin:0 0 10px">Oferta especial (opcional)</h3>
+          <p class="section-sub">Adicione após a compra (upsell): <b>Mentoria Express 1:1 (30 min)</b> para destravar seu plano com acompanhamento.</p>
+          <ul style="color:var(--muted)">
+            <li>Diagnóstico do seu momento</li>
+            <li>Customização do plano semanal</li>
+            <li>Checklist dos primeiros 7 dias</li>
+          </ul>
+          <div style="margin-top:12px"><i>* Configure como upsell dentro da Kiwify.</i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">Resultados dos alunos</h2>
+        <div class="grid testimonials">
+          <div class="card depo">
+            <p>“Comecei errando 60% das questões. Com o ciclo de revisões, subi para 78% em 6 semanas.”</p>
+            <b>— Mariana, OAB</b>
+          </div>
+          <div class="card depo">
+            <p>“O cronograma realista e o estudo reverso destravaram minha evolução. Parei de patinar.”</p>
+            <b>— Lucas, Concursos</b>
+          </div>
+          <div class="card depo">
+            <p>“O manual é direto. Já no primeiro dia apliquei a revisão e senti diferença na retenção.”</p>
+            <b>— Joana, Graduação</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTORA -->
+<section class="container-mentor">
+    <div class="mentor-section" aria-labelledby="mentor-title">
+          <div class="mentor-container">
+            <img src="assets/images/sinara-profile.jpg" alt="Sinara Fernanda Kochenborger" class="mentor-photo">
+            <h3 id="mentor-title">Sobre a autora do manual</h3>
+        
+            <p><strong>Sinara Fernanda Kochenborger</strong> foi aprovada em <strong>12+ concursos</strong> utilizando o
+              <strong>Método EstudaSina</strong>.</p>
+        
+            <p>Hoje, ela aplica o mesmo método com seus mentorandos — organizando a rotina, definindo
+              <strong>o que</strong> estudar e <strong>quando</strong> revisar, e usando técnicas de memorização que funcionam na prática.</p>
+        
+            <div class="mentor-stats" role="list">
+              <span class="stat" role="listitem"><i class="fa-solid fa-trophy"></i> 12+ aprovações da mentora</span>
+              <span class="stat" role="listitem"><i class="fa-solid fa-user-graduate"></i> 30+ aprovações de alunos</span>
+              <span class="stat" role="listitem"><i class="fa-solid fa-calendar-check"></i> Cronograma sob medida</span>
+            </div>
+        
+            <p class="disclaimer">Resultados variam conforme dedicação e contexto individual.</p>
+          </div>
+        </div>
+        
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">Perguntas frequentes</h2>
+        <details>
+          <summary>Funciona para concurso federal, estadual e municipal?</summary>
+          <p>Sim. O método é agnóstico ao edital. Você ajusta a carga horária e as prioridades conforme seu concurso.</p>
+        </details>
+        <details>
+          <summary>Recebo o manual imediatamente?</summary>
+          <p>Sim. Após o pagamento pela Kiwify, o acesso é liberado automaticamente no seu e‑mail.</p>
+        </details>
+        <details>
+          <summary>Posso pagar no Pix ou no cartão?</summary>
+          <p>Sim. Pix, boleto e cartões em até 12x (conforme condições vigentes na Kiwify).</p>
+        </details>
+        <details>
+          <summary>Tem garantia?</summary>
+          <p>Garantia incondicional de 7 dias. Se não for para você, peça o reembolso.</p>
+        </details>
+        <details>
+          <summary>Recebo atualizações?</summary>
+          <p>Você terá acesso gratuito às atualizações do manual por 12 meses.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section>
+      <div class="container card" style="padding:26px;display:grid;gap:12px;align-items:center;grid-template-columns:1fr auto">
+        <div>
+          <h3 style="margin:0 0 6px">Pronto para estudar com leveza e constância?</h3>
+          <p class="section-sub" style="margin:0">Baixe o manual e comece hoje mesmo a aplicar metas claras e o ciclo de revisões.</p>
+        </div>
+        <a class="btn btn-primary" href="https://kiwify.app/checkout/SEU-LINK" target="_blank" rel="noopener">Quero o manual</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:8px"><span class="logo-mark">ES</span><span>Estuda Sina</span></div>
+        <small>© <span id="y"></span> Estuda Sina. Todos os direitos reservados.</small>
+      </div>
+      <div style="text-align:right">
+        <a href="#" style="margin-right:10px">Termos</a>
+        <a href="#" style="margin-right:10px">Privacidade</a>
+        <a href="#">Suporte</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky CTA (mobile) -->
+  <div class="sticky-cta" aria-hidden="true">
+    <span><b>Manual do Concurseiro Imparável</b> — R$ 49</span>
+    <a href="https://kiwify.app/checkout/SEU-LINK" target="_blank" rel="noopener">Comprar</a>
+  </div>
+
+  <script>
+    // Atualiza ano
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Esconde sticky CTA em telas grandes
+    const mql = window.matchMedia('(min-width: 981px)');
+    const sticky = document.querySelector('.sticky-cta');
+    function toggleSticky(){ sticky.style.display = mql.matches ? 'none' : 'flex'; }
+    toggleSticky();
+    mql.addEventListener('change', toggleSticky);
+  </script>
+</body>
+</html>
