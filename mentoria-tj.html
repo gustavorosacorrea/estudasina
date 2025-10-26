@@ -1,0 +1,413 @@
+---
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <script src="assets/js/pixel.js"></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EstudaSina — Método para Aprovação</title>
+  <meta name="description" content="Planejamento semanal com cronograma detalhado: saiba exatamente o que estudar e quando revisar. Técnicas de memorização e rotina sustentável com Pomodoro. Vagas limitadas para acompanhamento individual.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <style>
+    :root{
+      --bg:#0e1320;
+      --card:#12192b;
+      --brand:#5eead4;
+      --brand-2:#22d3ee;
+      --text:#e6eaf2;
+      --muted:#9fb0c7;
+      --danger:#ff6b6b;
+    }
+    .logoRow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .logoRow img {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      /* border: 3px solid #000000; */
+      border-radius: 100%;
+      box-shadow: 0px 0px 18px rgb(30 232 186 / 55%);
+    }
+    .alert--success {
+      background: #ccffd6;
+      color: #2cac19;
+      border: 1px solid #179d32;
+    }
+    .alert--success, .alert--error {
+      display: none;
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    .alert--error {
+      background: #ffe8e5;
+      color: #8a2f2f;
+      border: 1px solid #ffd0c9;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(1100px 600px at 20% -10%, #1b2440 0%, #0e1320 60%), var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;padding:48px 0}
+    @media (max-width:900px){.hero{grid-template-columns:1fr;padding-top:24px} .card{order:2} .copy{order:1}}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(94,234,212,.1);color:var(--brand);border:1px solid rgba(94,234,212,.35);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.4px;text-transform:uppercase}
+    h1{font-size:clamp(28px,4.2vw,46px);line-height:1.05;margin:14px 0 12px}
+    .sub{font-size:clamp(15px,1.6vw,18px);color:var(--muted);max-width:58ch;margin:0 0 18px}
+    .badges{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0 18px}
+    .badge{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:8px 12px;border-radius:999px;font-size:13px;display: flex;gap: 5px; align-items: center;}
+    /* Mobile em grid 2x2 */ @media (max-width: 600px) { .badges { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 12px; text-align: center; } .badge { width: 100%; justify-content: center; } }
+    .cta-row{display:flex;justify-content: center;flex-wrap:wrap;gap:12px;margin:20px 0 20px}
+    .cta{appearance:none;border:0;cursor:pointer;border-radius:12px;padding:14px 18px;font-weight:700;font-size:16px;transition:transform .05s ease,box-shadow .2s ease;display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+    .cta:hover{transform:translateY(-1px)}
+    .cta.primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#031016;box-shadow:0 8px 26px rgba(34,211,238,.25)}
+    .cta.secondary{background:transparent;border:1px solid rgba(255,255,255,.18);color:var(--text)}
+    .meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);justify-content: center;font-size:13px;margin-top:8px}
+    .meta strong{color:var(--text)}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px}
+    .card h3{margin:8px 0 10px;font-size:18px}
+    .field{display:flex;flex-direction:column;gap:6px;margin:10px 0}
+    .field input{background:#0b0f1b;border:1px solid rgba(255,255,255,.12);color:var(--text);border-radius:10px;padding:12px;font-size:15px;outline:none}
+    .field input:focus{border-color:var(--brand)}
+    .consent{display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--muted)}
+    .consent input{margin-top:3px}
+    .disclaimer{font-size:11px;color:var(--muted);margin-top:10px}
+    .pill{display:inline-flex;gap:6px;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:12px}
+    .count{display:inline-flex;gap:10px;align-items:center;font-weight:700;color:var(--danger)}
+    /* ALERTS blindados */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="copy">
+        <div class="logoRow">
+          <img src="assets/images/sinara-round.png" alt="EstudaSina">
+          <span class="eyebrow">Mentoria EstudaSina</span>
+        </div>
+        <!-- Opções de headline para teste A/B (mantenha apenas uma ativa no seu HTML final) -->
+        <h1>Prepare-se para o concurso do TJ com 90 dias de <u>acompanhamento estratégico</u>.</h1>
+        <!-- <h1>Plano de estudos sob medida: foco, memorização e resultado pra OAB e Concursos.</h1> -->
+        <!-- <h1>Chega de estudar no escuro: método guiado para acelerar sua aprovação.</h1> -->
+        <p class="sub">Planejamento semanal com cronograma detalhado: saiba exatamente o que estudar e quando revisar. Técnicas de memorização e rotina sustentável com Pomodoro. Vagas limitadas para acompanhamento individual.</p>
+
+        <div class="cta-row">
+          <a href="#form" class="cta primary">Quero minha vaga</a>
+          <a href="#form" class="cta secondary">Ver como funciona</a>
+        </div>
+        
+        
+        <div class="badges">
+          <span class="badge"><span>📅</span>Cronograma semanal</span>
+          <span class="badge"><span>🧠</span>Técnicas de memorização</span>
+          <span class="badge"><span>⏱️</span>Rotina com Pomodoro</span>
+          <span class="badge"><span>🤝</span>Salinha de estudos</span>
+        </div>
+        <div class="meta">
+          <span class="pill">✅ Sem custo para entrar na lista</span>
+          <span class="pill">🔒 Seus dados ficam protegidos</span>
+          <span class="count">🔥 Restam <span id="vagas">8</span> vagas neste mês</span>
+        </div>
+      </div>
+
+      <div class="card" id="form">
+        <h3>Entre para a lista de prioridade</h3>
+        <form id="leadForm" class="form" action="https://script.google.com/macros/s/AKfycbzWanQIym2Y2jC_zOnKR9eHNg2gianjw5qH6a_p1JVrXHqSHwGGlOCRhnnvCuB0xYX4BA/exec" method="POST" target="lead_iframe" novalidate>
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" placeholder="Seu nome completo" required>
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" placeholder="seuemail@exemplo.com" required>
+          </div>
+          <div class="field">
+            <label for="whatsapp">WhatsApp</label>
+            <input id="whatsapp" name="whatsapp" type="tel" required inputmode="numeric" pattern="^\d{10,15}$" placeholder="(55) 9xxxx-xxxx">
+          </div>
+          {% if site.show_consent %}
+          <div class="consent">
+            <input type="checkbox" id="lgpd" checked>
+            <label for="lgpd">Autorizo receber comunicações sobre a Mentoria EstudaSina. Você pode sair quando quiser.</label>
+          </div>
+          {% endif %}
+          <button id="submitBtn" type="submit" class="cta primary" style="width:100%;justify-content:center;margin-top:10px">Entrar na lista</button>
+          <p class="disclaimer">Prometemos não enviar spam. O acesso é por ordem de inscrição e disponibilidade de vagas.</p>
+          
+          <!-- campos hidden para UTM/referrer -->
+          <input type="hidden" id="origem" name="origem">
+          <input type="hidden" id="referrer" name="referrer">
+          <input type="hidden" id="utm_source" name="utm_source">
+          <input type="hidden" id="utm_medium" name="utm_medium">
+          <input type="hidden" id="utm_campaign" name="utm_campaign">
+          <input type="hidden" id="utm_content" name="utm_content">
+          <input type="hidden" id="utm_term" name="utm_term">
+          
+          <div id="ok" class="alert alert--success">
+            <i class="fa-solid fa-check"></i> Recebido! Em breve entraremos em contato no WhatsApp/e-mail.
+          </div>
+          <div id="fail" class="alert alert--error">
+            <i class="fa-solid fa-circle-exclamation"></i> Ops, não foi possível enviar agora. Tente novamente.
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="faq-section" aria-labelledby="faq-title">
+      <div class="faq-container">
+        <h3 id="faq-title">Perguntas Frequentes</h3>
+    
+        <details class="faq-item">
+          <summary><i class="fa-solid fa-circle-question"></i> Funciona para qualquer concurso ou só para o TJ?</summary>
+          <div class="faq-content">
+            <p>O Método EstudaSina já ajudou alunos na preparação tanto para a OAB quanto para diversos concursos públicos — federais, estaduais e municipais. O acompanhamento é personalizado, adaptado à sua meta específica.</p>
+          </div>
+        </details>
+    
+        <details class="faq-item">
+          <summary><i class="fa-solid fa-clock"></i> Funciona para concursos federais ou apenas estaduais e municipais?</summary>
+          <div class="faq-content">
+            <p>Sim! O Método EstudaSina é flexível e já foi aplicado em concursos de todas as esferas. Se o seu objetivo é um concurso federal de alta concorrência ou um certame municipal, o acompanhamento será ajustado para a sua meta específica.</p>
+          </div>
+        </details>
+    
+        <details class="faq-item">
+          <summary><i class="fa-solid fa-user-group"></i> Preciso ter muitas horas livres para aproveitar a mentoria?</summary>
+          <div class="faq-content">
+            <p>Não. O cronograma é construído de acordo com a sua rotina, mesmo que você tenha pouco tempo disponível por dia. Com foco no essencial e técnicas como o Pomodoro, você consegue evoluir de forma constante.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary><i class="fa-solid fa-user-group"></i> Como funciona o acompanhamento individual?</summary>
+          <div class="faq-content">
+            <p>Você recebe metas semanais personalizadas, revisadas pela mentora Sinara, aprovada em mais de 12 concursos. Além disso, terá acesso à salinha de estudos, um espaço exclusivo para trocar experiências com outros alunos.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary><i class="fa-solid fa-user-group"></i> O método garante aprovação?</summary>
+          <div class="faq-content">
+            <p>Não oferecemos garantias de aprovação, porque o resultado depende do seu esforço e contexto. O que garantimos é uma estrutura de estudo clara, com cronograma, técnicas de memorização e acompanhamento próximo — fatores que aumentam suas chances de aprovação.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary><i class="fa-solid fa-user-group"></i> Como faço para garantir minha vaga?</summary>
+          <div class="faq-content">
+            <p>Basta preencher o formulário nesta página. A inscrição é gratuita e as vagas são limitadas a 8 por mês, para que cada aluno receba atenção individual. Após a inscrição, você recebe os próximos passos no seu e-mail e WhatsApp.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+    <section class="mentor-section" aria-labelledby="mentor-title">
+      <div class="mentor-container">
+        <img src="assets/images/sinara-round.png" alt="Sinara Fernanda Kochenborger" class="mentor-photo">
+        <h3 id="mentor-title">Quem vai te acompanhar</h3>
+    
+        <p><strong>Sinara Fernanda Kochenborger</strong> foi aprovada em <strong>12+ concursos</strong> utilizando o
+          <strong>Método EstudaSina</strong>.</p>
+    
+        <p>Hoje, ela aplica o mesmo método com seus mentorandos — organizando a rotina, definindo
+          <strong>o que</strong> estudar e <strong>quando</strong> revisar, e usando técnicas de memorização que funcionam na prática.</p>
+    
+        <div class="mentor-stats" role="list">
+          <span class="stat" role="listitem"><i class="fa-solid fa-trophy"></i> 12+ aprovações da mentora</span>
+          <span class="stat" role="listitem"><i class="fa-solid fa-user-graduate"></i> 30+ aprovações de alunos</span>
+          <span class="stat" role="listitem"><i class="fa-solid fa-calendar-check"></i> Cronograma sob medida</span>
+        </div>
+    
+        <p class="disclaimer">Resultados variam conforme dedicação e contexto individual.</p>
+      </div>
+    </section>
+    <style>
+      .hidden { display: none !important;}
+      .mentor-section {
+        background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.04));
+        border-top: 1px solid rgba(255,255,255,.08);
+        padding: 60px 20px; margin-top: 60px; text-align: center;
+      }
+      .mentor-container { max-width: 720px; margin: 0 auto; color: #e6eaf2; }
+      .mentor-photo {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+        border: 3px solid #123f47;
+        box-shadow: 0 8px 20px rgba(34,211,238,.25);
+      }
+      .mentor-section h3 { font-size: 22px; margin-bottom: 12px; color: #5eead4; }
+      .mentor-section p { font-size: 15px; line-height: 1.6; margin: 6px 0; color: #cfd8e6; }
+      .mentor-section p strong { color: #fff; }
+      
+      .mentor-stats {
+        display: grid; grid-template-columns: repeat(3, 1fr);
+        gap: 10px; margin: 16px 0 8px;
+      }
+      .stat {
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        padding: 8px 12px; border-radius: 999px;
+        background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+        font-size: 13px; color: #e6eaf2;
+      }
+      .disclaimer { font-size: 12px; color: #93a4bd; margin-top: 10px; }
+      
+      /* Mobile */
+      @media (max-width: 700px) {
+        .mentor-stats { grid-template-columns: 1fr; }
+        .mentor-photo { width: 110px; height: 110px; }
+        .mentor-section h3 { font-size: 20px; }
+        .mentor-section p { font-size: 14px; }
+      }
+    </style>
+  </div>
+
+  <script>
+    // Exemplo simples de redução de vagas (apenas visual — troque por lógica real no seu site)
+    (function(){
+      try {
+        const key='vagas_restantes_mes';
+        const stored=localStorage.getItem(key);
+        let vagas = stored? parseInt(stored,10): 8;
+        if (vagas>3) { vagas = vagas - 1; }
+        localStorage.setItem(key, String(vagas));
+        const el=document.getElementById('vagas');
+        if (el) el.textContent = String(vagas);
+      } catch(e){/* noop */}
+    })();
+    
+    // Ajuste se tiver header fixo (em px). Se não tiver, pode deixar 0.
+    const OFFSET = 0; 
+    
+    function scrollFormCenter(e) {
+      const link = e.target.closest('a[href="#form"], .cta[href="#form"]');
+      if (!link) return;
+      e.preventDefault();
+      e.stopPropagation();
+    
+      const form = document.getElementById('form');
+      if (!form) return;
+    
+      // Calcula Y para centralizar o form na janela
+      const rect = form.getBoundingClientRect();
+      const targetY = window.pageYOffset + rect.top 
+                    - ((window.innerHeight - rect.height) / 2) 
+                    - OFFSET;
+    
+      window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
+    }
+    
+    // Delegação captura TODOS os cliques em links para #form
+    document.addEventListener('click', scrollFormCenter, true);
+  </script>
+  
+  <iframe name="lead_iframe" style="display:none;"></iframe>
+  
+  <!-- jQuery -->
+  <script src="assets/js/jquery-2.1.0.min.js"></script>
+  
+  <!-- Plugins -->
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/scrollreveal.min.js"></script>
+  <script src="assets/js/waypoints.min.js"></script>
+  
+  <!-- Adicionar UTM nos links do site -->
+  <script src="assets/js/link-param.js"></script>
+  
+  <!-- Leads Form -->
+  <script src="assets/js/leads.js"></script>
+</body>
+<footer style="background: linear-gradient(0deg, black, #0e1321); color:#9fb0c7; padding:32px 20px; text-align:center; font-size:14px; line-height:1.6; margin-top:48px;">
+  <img src="assets/images/Logo-ES-branco.png" loading="lazy" height="40px" width="auto">
+  <p>Acompanhamento Estratégico para OAB e Concursos</p>
+  <p>CNPJ: 58.891.673/0001-69 · Coronel Bicaco/RS</p>
+  <p>Contato: <a href="mailto:contato@estudasina.com.br" style="color:#5eead4;">contato@estudasina.com.br</a> · 
+  WhatsApp: <a href="https://wa.me/5555999999999" style="color:#5eead4;" target="_blank" rel="noopener noreferrer">(55) 9 9999-9999</a></p>
+  <p>
+    <a href="#" style="color:#9fb0c7; text-decoration:none;">Política de Privacidade</a> · 
+    <a href="#" style="color:#9fb0c7; text-decoration:none;">Termos de Uso</a>
+  </p>
+  <p style="margin-top:12px; font-size:12px; color:#6c7a92;">© 2025 EstudaSina — Todos os direitos reservados.</p>
+</footer>
+
+<style>
+  .faq-section {
+    background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.04));
+    border-top: 1px solid rgba(255,255,255,.08);
+    padding: 60px 20px;
+    margin-top: 60px;
+  }
+  
+  .faq-container { max-width: 800px; margin: 0 auto; color: #e6eaf2; }
+  .faq-section h3 { font-size: 24px; text-align: center; margin-bottom: 26px; color: #5eead4; }
+  
+  .faq-item {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 12px;
+    margin: 10px 0;
+    overflow: hidden; /* bordas limpas */
+  }
+  
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 16px;
+    color: #fff;
+    display: flex; align-items: center; gap: 10px;
+    outline: none;
+    user-select: none;
+  }
+  
+  .faq-item summary::-webkit-details-marker { display: none; }
+  
+  .faq-item[open] summary {
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    background: rgba(255,255,255,.02);
+  }
+  
+  .faq-item .faq-content {
+    padding: 14px 16px;
+    color: #cfd8e6;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  
+  /* Indicador visual (seta) usando pseudo-elemento */
+  .faq-item summary::after {
+    content: "\f078"; /* fa-chevron-down */
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
+    margin-left: auto;
+    transition: transform .2s ease;
+    opacity: .9;
+  }
+  .faq-item[open] summary::after { transform: rotate(180deg); }
+  
+  /* Mobile */
+  @media (max-width: 700px) {
+    .faq-section h3 { font-size: 20px; }
+    .faq-item summary { font-size: 15px; padding: 12px 14px; }
+    .faq-item .faq-content { font-size: 14px; padding: 12px 14px; }
+  }
+
+</style>
+<script>
+  document.addEventListener('click', function(e) {
+    const el = e.target.closest('details.faq-item');
+    if (!el) return;
+    // fecha os demais quando um abre
+    if (!el.open) {
+      document.querySelectorAll('details.faq-item[open]').forEach(d => {
+        if (d !== el) d.removeAttribute('open');
+      });
+    }
+  });
+</script>
+
+</html>
