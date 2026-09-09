@@ -18,7 +18,9 @@
   <meta property="og:description" content="Pare de estudar no escuro. Transforme suas horas de estudo em uma preparação com método, direção e evolução mensurável." />
   <meta property="og:url" content="https://estudasina.com.br/" />
   <meta property="og:image" content="https://estudasina.com.br/assets/images/og-cover.jpg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
   <link rel="stylesheet" href="assets/css/v2-home.css" />
+  <link rel="stylesheet" href="assets/css/v2-adjustments.css" />
 </head>
 <body>
   <header class="es-header">
@@ -36,8 +38,8 @@
         <a href="#sobre">Sobre</a>
       </nav>
 
-      <a class="es-nav-cta" href="#caminhos">Começar agora <span aria-hidden="true">→</span></a>
-      <button class="es-menu-toggle" type="button" aria-label="Abrir menu" aria-controls="main-nav" aria-expanded="false">☰</button>
+      <a class="es-nav-cta" href="#caminhos">Começar agora <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <button class="es-menu-toggle" type="button" aria-label="Abrir menu" aria-controls="main-nav" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
     </div>
   </header>
 
@@ -51,15 +53,15 @@
           <p class="es-support">Para OAB e concursos públicos. Um método criado e validado por quem vive o processo e já conquistou múltiplas aprovações.</p>
 
           <div class="es-hero-actions" id="caminhos">
-            <a class="es-btn es-btn-primary" href="#curso">Conhecer o curso <span aria-hidden="true">→</span></a>
+            <a class="es-btn es-btn-primary" href="#curso">Conhecer o curso <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             <a class="es-btn es-btn-secondary" href="mentoria-oab-concursos.html">Conhecer a mentoria</a>
           </div>
 
           <div class="es-hero-points" aria-label="Diferenciais do método">
-            <div class="es-point"><span class="es-point-icon">✓</span><span>Planejamento estratégico</span></div>
-            <div class="es-point"><span class="es-point-icon">↗</span><span>Acompanhamento real</span></div>
-            <div class="es-point"><span class="es-point-icon">◎</span><span>Método prático e aplicável</span></div>
-            <div class="es-point"><span class="es-point-icon">▥</span><span>Foco em resultados</span></div>
+            <div class="es-point"><span class="es-point-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></span><span>Planejamento estratégico</span></div>
+            <div class="es-point"><span class="es-point-icon"><i class="fa-solid fa-user-group" aria-hidden="true"></i></span><span>Acompanhamento real</span></div>
+            <div class="es-point"><span class="es-point-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></span><span>Método prático e aplicável</span></div>
+            <div class="es-point"><span class="es-point-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></span><span>Foco em resultados</span></div>
           </div>
         </div>
 
@@ -93,19 +95,19 @@
     <section class="es-proof" aria-label="Indicadores do Estuda Sina">
       <div class="es-shell es-proof-grid">
         <div class="es-proof-item">
-          <div class="es-proof-icon">⌁</div>
+          <div class="es-proof-icon"><i class="fa-solid fa-trophy" aria-hidden="true"></i></div>
           <div class="es-proof-copy"><strong>12+</strong><small>aprovações da mentora em concursos públicos</small></div>
         </div>
         <div class="es-proof-item">
-          <div class="es-proof-icon">◫</div>
+          <div class="es-proof-icon"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
           <div class="es-proof-copy"><strong>Resultados reais</strong><small>histórias de quem aplicou o método</small></div>
         </div>
         <div class="es-proof-item">
-          <div class="es-proof-icon">▤</div>
+          <div class="es-proof-icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></div>
           <div class="es-proof-copy"><strong>OAB + Concursos</strong><small>diferentes áreas e carreiras</small></div>
         </div>
         <div class="es-proof-item">
-          <div class="es-proof-icon">☆</div>
+          <div class="es-proof-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
           <div class="es-proof-copy"><strong>Método validado</strong><small>estratégias aplicadas na prática</small></div>
         </div>
       </div>
@@ -129,14 +131,16 @@
     toggle?.addEventListener('click', () => {
       const open = nav.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.textContent = open ? '×' : '☰';
+      toggle.innerHTML = open
+        ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
+        : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
     });
 
     nav?.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         nav.classList.remove('is-open');
         toggle?.setAttribute('aria-expanded', 'false');
-        if (toggle) toggle.textContent = '☰';
+        if (toggle) toggle.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
       });
     });
   </script>
