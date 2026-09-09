@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estuda Sina V2 Preview</title>
+  <style>
+    html,body{margin:0;min-height:100%;background:#0d1b24;color:#fff;font-family:system-ui,-apple-system,sans-serif}
+    .loading{min-height:100vh;display:grid;place-items:center;font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+  </style>
+</head>
+<body>
+  <div class="loading">Carregando preview…</div>
+  <script>
+    const commit = 'a863cb9f2c043537aaa4070c36f0b09554366b9d';
+    const cdnBase = `https://cdn.jsdelivr.net/gh/gustavorosacorrea/estudasina@${commit}/`;
+    fetch(cdnBase + 'index.html')
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.text();
+      })
+      .then(html => {
+        html = html.replace('<head>', `<head><base href="${cdnBase}">`);
+        document.open();
+        document.write(html);
+        document.close();
+      })
+      .catch(error => {
+        document.body.innerHTML = `<div class="loading">Não foi possível carregar a preview (${error.message}).</div>`;
+      });
+  </script>
+</body>
+</html>
