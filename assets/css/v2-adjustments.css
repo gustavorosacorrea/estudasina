@@ -1,0 +1,60 @@
+/* V2 adjustments: hero visibility + Font Awesome refinements */
+.es-hero-photo {
+  z-index: 0;
+  filter: saturate(.92) contrast(1.01) brightness(.92);
+  object-position: center 24%;
+}
+
+.es-hero-visual::before {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, #0d2029 0%, rgba(13,32,41,.50) 17%, rgba(13,32,41,.08) 46%, rgba(8,20,27,.08) 100%),
+    linear-gradient(0deg, rgba(8,20,27,.70) 0%, transparent 36%);
+}
+
+.es-dashboard-label,
+.es-dashboard,
+.es-visual-quote {
+  z-index: 3;
+}
+
+.es-point-icon i,
+.es-proof-icon i {
+  line-height: 1;
+}
+
+.es-point-icon i {
+  font-size: 12px;
+}
+
+.es-proof-icon i {
+  font-size: 16px;
+}
+
+.es-btn i,
+.es-nav-cta i {
+  font-size: .82em;
+  transition: transform .2s ease;
+}
+
+.es-btn:hover i,
+.es-nav-cta:hover i {
+  transform: translateX(3px);
+}
+
+.es-menu-toggle i {
+  pointer-events: none;
+}
+
+@media (max-width: 820px) {
+  .es-hero-photo {
+    object-position: center 18%;
+    filter: saturate(.94) contrast(1) brightness(.95);
+  }
+
+  .es-hero-visual::before {
+    z-index: 1;
+    background:
+      linear-gradient(180deg, rgba(13,32,41,.20) 0%, rgba(13,32,41,.02) 34%, rgba(8,20,27,.18) 65%, rgba(8,20,27,.82) 100%);
+  }
+}
