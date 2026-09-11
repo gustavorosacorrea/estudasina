@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="assets/css/v2-mobile.css" />
   <link rel="stylesheet" href="assets/css/v2-mobile-vertical-method.css" />
   <link rel="stylesheet" href="assets/css/v2-hero-cutout.css" />
+  <link rel="stylesheet" href="assets/css/v2-animations.css" />
+  <script>document.documentElement.classList.add('es-motion');</script>
 </head>
 <body>
   <header class="es-header">
@@ -232,6 +234,87 @@
         if (toggle) toggle.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
       });
     });
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!reducedMotion && 'IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.16,
+        rootMargin: '0px 0px -6% 0px'
+      });
+
+      const addRevealGroup = (selector, delayStep = 90) => {
+        document.querySelectorAll(selector).forEach((el, index) => {
+          el.classList.add('es-animate');
+          el.style.setProperty('--es-delay', `${index * delayStep}ms`);
+          revealObserver.observe(el);
+        });
+      };
+
+      // Hero editorial entrance.
+      requestAnimationFrame(() => {
+        document.querySelector('.es-hero-copy')?.classList.add('is-visible');
+      });
+
+      // Dashboard has its own stagger and progress-bar motion.
+      const dashboardLabel = document.querySelector('.es-dashboard-label');
+      if (dashboardLabel) {
+        dashboardLabel.classList.add('es-dashboard-motion');
+        revealObserver.observe(dashboardLabel);
+      }
+
+      document.querySelectorAll('.es-stat-card').forEach((card, index) => {
+        card.classList.add('es-dashboard-motion');
+        card.style.transitionDelay = `${index * 115}ms`;
+
+        const progress = card.querySelector('.es-progress > span');
+        if (progress) {
+          const target = progress.style.width || '100%';
+          progress.style.setProperty('--es-progress-target', target);
+        }
+
+        revealObserver.observe(card);
+      });
+
+      // Supporting sections: subtle only.
+      addRevealGroup('.es-proof-item', 75);
+      addRevealGroup('.es-section-intro > *', 95);
+      addRevealGroup('.es-problem-card', 90);
+
+      const problemClose = document.querySelector('.es-problem-close');
+      if (problemClose) {
+        problemClose.classList.add('es-animate');
+        revealObserver.observe(problemClose);
+      }
+
+      const methodHead = document.querySelector('.es-method-head');
+      if (methodHead) {
+        methodHead.classList.add('es-animate');
+        revealObserver.observe(methodHead);
+      }
+
+      const methodTrack = document.querySelector('.es-method-track');
+      if (methodTrack) revealObserver.observe(methodTrack);
+
+      document.querySelectorAll('.es-method-step').forEach((step, index) => {
+        step.style.transitionDelay = `${index * 105}ms`;
+        revealObserver.observe(step);
+      });
+
+      const methodLoop = document.querySelector('.es-method-loop');
+      if (methodLoop) {
+        methodLoop.classList.add('es-animate');
+        revealObserver.observe(methodLoop);
+      }
+    } else {
+      document.documentElement.classList.remove('es-motion');
+    }
   </script>
 </body>
 </html>
