@@ -1,0 +1,178 @@
+/* Estuda Sina V2 — purposeful motion
+   Motion reinforces progression and hierarchy without changing layout. */
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Generic reveal. Uses the individual translate property so existing
+     hover transforms remain untouched. */
+  html.es-motion .es-animate {
+    opacity: 0;
+    translate: 0 16px;
+    transition:
+      opacity .62s cubic-bezier(.2,.72,.2,1) var(--es-delay, 0ms),
+      translate .72s cubic-bezier(.2,.72,.2,1) var(--es-delay, 0ms);
+    will-change: opacity, translate;
+  }
+
+  html.es-motion .es-animate.is-visible {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  /* Hero copy — quiet editorial entrance on page load. */
+  html.es-motion .es-hero-copy > * {
+    opacity: 0;
+    translate: 0 14px;
+    transition:
+      opacity .62s cubic-bezier(.2,.72,.2,1),
+      translate .72s cubic-bezier(.2,.72,.2,1);
+  }
+
+  html.es-motion .es-hero-copy.is-visible > * {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  html.es-motion .es-hero-copy.is-visible > :nth-child(1) { transition-delay: 80ms; }
+  html.es-motion .es-hero-copy.is-visible > :nth-child(2) { transition-delay: 150ms; }
+  html.es-motion .es-hero-copy.is-visible > :nth-child(3) { transition-delay: 230ms; }
+  html.es-motion .es-hero-copy.is-visible > :nth-child(4) { transition-delay: 300ms; }
+  html.es-motion .es-hero-copy.is-visible > :nth-child(5) { transition-delay: 380ms; }
+  html.es-motion .es-hero-copy.is-visible > :nth-child(6) { transition-delay: 450ms; }
+
+  /* Dashboard — cards arrive in sequence and progress bars fill once. */
+  html.es-motion .es-dashboard-label.es-dashboard-motion {
+    opacity: 0;
+    translate: 0 9px;
+    transition: opacity .5s ease, translate .58s cubic-bezier(.2,.72,.2,1);
+  }
+
+  html.es-motion .es-dashboard-label.es-dashboard-motion.is-visible {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  html.es-motion .es-stat-card.es-dashboard-motion {
+    opacity: 0;
+    translate: 0 14px;
+    transition:
+      opacity .5s ease,
+      translate .64s cubic-bezier(.2,.72,.2,1),
+      border-color .28s ease,
+      box-shadow .28s ease;
+  }
+
+  html.es-motion .es-stat-card.es-dashboard-motion.is-visible {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  html.es-motion .es-stat-card.es-dashboard-motion .es-progress > span {
+    width: 0 !important;
+    transition: width 1.05s cubic-bezier(.2,.72,.2,1) .12s;
+  }
+
+  html.es-motion .es-stat-card.es-dashboard-motion.is-visible .es-progress > span {
+    width: var(--es-progress-target) !important;
+  }
+
+  /* Icons gently activate when their card appears. */
+  html.es-motion .es-proof-icon,
+  html.es-motion .es-problem-icon {
+    scale: .88;
+    transition: scale .55s cubic-bezier(.2,.9,.25,1), background .3s ease;
+  }
+
+  html.es-motion .es-proof-item.is-visible .es-proof-icon,
+  html.es-motion .es-problem-card.is-visible .es-problem-icon {
+    scale: 1;
+  }
+
+  /* Method line draws itself in the same direction as the reading flow. */
+  html.es-motion .es-method-track::before {
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1.05s cubic-bezier(.2,.72,.2,1) .08s;
+  }
+
+  html.es-motion .es-method-track.is-visible::before {
+    clip-path: inset(0 0 0 0);
+  }
+
+  html.es-motion .es-method-step {
+    opacity: 0;
+    translate: 0 17px;
+    transition:
+      opacity .58s cubic-bezier(.2,.72,.2,1),
+      translate .7s cubic-bezier(.2,.72,.2,1);
+  }
+
+  html.es-motion .es-method-step.is-visible {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  html.es-motion .es-method-node {
+    transition:
+      border-color .45s ease,
+      background .45s ease,
+      box-shadow .55s ease,
+      scale .55s cubic-bezier(.2,.9,.25,1);
+    scale: .9;
+  }
+
+  html.es-motion .es-method-step.is-visible .es-method-node {
+    border-color: rgba(168,232,193,.60);
+    background: #12313c;
+    box-shadow:
+      0 0 0 7px #0e222c,
+      0 0 28px rgba(126,216,162,.12);
+    scale: 1;
+  }
+
+  html.es-motion .es-method-step.is-visible .es-method-node i {
+    animation: es-icon-settle .56s cubic-bezier(.2,.9,.25,1) both;
+  }
+
+  html.es-motion .es-method-loop-icon {
+    transition: scale .6s cubic-bezier(.2,.9,.25,1), background .35s ease;
+  }
+
+  html.es-motion .es-method-loop.is-visible .es-method-loop-icon {
+    animation: es-infinity-settle .7s cubic-bezier(.2,.8,.2,1) both;
+  }
+
+  @keyframes es-icon-settle {
+    0% { scale: .74; opacity: .45; }
+    70% { scale: 1.08; opacity: 1; }
+    100% { scale: 1; opacity: 1; }
+  }
+
+  @keyframes es-infinity-settle {
+    0% { scale: .82; rotate: -8deg; }
+    70% { scale: 1.06; rotate: 3deg; }
+    100% { scale: 1; rotate: 0deg; }
+  }
+}
+
+/* Mobile method line is vertical, so reveal from top to bottom. */
+@media (max-width: 820px) and (prefers-reduced-motion: no-preference) {
+  html.es-motion .es-method-track::before {
+    clip-path: inset(0 0 100% 0);
+    transition-duration: 1.4s;
+  }
+
+  html.es-motion .es-method-track.is-visible::before {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Accessibility: no hidden content or animated progress for users who reduce motion. */
+@media (prefers-reduced-motion: reduce) {
+  html.es-motion *,
+  html.es-motion *::before,
+  html.es-motion *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
