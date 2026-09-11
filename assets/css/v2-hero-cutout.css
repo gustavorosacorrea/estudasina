@@ -1,6 +1,6 @@
 /* Estuda Sina V2 — responsive hero imagery
    Desktop: panoramic mentoring scene as full hero background.
-   Mobile: transparent Sinara cutout remains as the controlled visual. */
+   Mobile: transparent Sinara cutout uses the full visual width. */
 
 @media (min-width: 821px) {
   .es-hero {
@@ -19,7 +19,6 @@
       url('../images/sinara-hero-desktop.png') center right / cover no-repeat;
   }
 
-  /* Keep the brand grid subtle over the photographic scene. */
   .es-hero::before {
     opacity: .56;
     mask-image: linear-gradient(to right, black 0%, rgba(0,0,0,.72) 42%, transparent 74%);
@@ -35,7 +34,6 @@
     text-shadow: 0 1px 18px rgba(0,0,0,.08);
   }
 
-  /* The panorama is already in the hero background on desktop. */
   .es-hero-photo {
     display: none;
   }
@@ -53,8 +51,6 @@
     display: none;
   }
 
-  /* HTML metrics stay separate from the image and occupy the visual gap
-     between the copy and Sinara. */
   .es-dashboard-label {
     top: 48px;
     left: 20px;
@@ -114,27 +110,25 @@
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    height: 440px;
-    min-height: 440px;
+    height: auto;
+    min-height: 0;
     padding-bottom: 0;
     background:
       radial-gradient(circle at 52% 33%, rgba(126,216,162,.11), transparent 39%),
       linear-gradient(180deg, #102832 0%, #0d2029 100%);
   }
 
+  /* Mobile image follows the available width instead of a fixed hero height. */
   .es-hero-photo {
     display: block;
-    position: absolute;
-    top: auto;
-    left: 50%;
-    right: auto;
-    bottom: -5px;
-    width: auto;
-    height: 100%;
-    max-width: none;
-    transform: translateX(-50%);
+    position: relative;
+    inset: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    transform: none;
     object-fit: contain;
-    object-position: bottom center;
+    object-position: center bottom;
     z-index: 1;
     filter: saturate(.98) contrast(1.01) brightness(.98);
   }
@@ -143,35 +137,28 @@
     content: '';
     position: absolute;
     z-index: 0;
-    right: auto;
-    left: 50%;
-    top: 7%;
-    width: 105%;
-    height: 82%;
-    transform: translateX(-50%);
-    border-radius: 50%;
+    inset: 0;
     pointer-events: none;
-    background: radial-gradient(circle, rgba(126,216,162,.10) 0%, rgba(126,216,162,.025) 47%, transparent 72%);
+    background: radial-gradient(circle at 52% 34%, rgba(126,216,162,.10) 0%, rgba(126,216,162,.025) 46%, transparent 72%);
   }
 
   .es-hero-visual::before {
     content: '';
     position: absolute;
     inset: 0;
-    height: 100%;
     z-index: 2;
     pointer-events: none;
     background:
       linear-gradient(180deg,
-        rgba(13,32,41,.04) 0%,
-        rgba(13,32,41,0) 47%,
-        rgba(8,20,27,.20) 67%,
-        rgba(8,20,27,.92) 100%),
+        rgba(13,32,41,.03) 0%,
+        rgba(13,32,41,0) 50%,
+        rgba(8,20,27,.18) 70%,
+        rgba(8,20,27,.90) 100%),
       linear-gradient(90deg,
-        rgba(13,32,41,.16) 0%,
-        transparent 22%,
-        transparent 78%,
-        rgba(13,32,41,.12) 100%);
+        rgba(13,32,41,.10) 0%,
+        transparent 18%,
+        transparent 82%,
+        rgba(13,32,41,.08) 100%);
   }
 
   .es-dashboard-label {
@@ -198,13 +185,13 @@
 
 @media (max-width: 520px) {
   .es-hero-visual {
-    height: 405px;
-    min-height: 405px;
+    height: auto;
+    min-height: 0;
   }
 
   .es-hero-photo {
-    bottom: -4px;
-    height: 98%;
+    width: 100%;
+    height: auto;
   }
 
   .es-dashboard {
