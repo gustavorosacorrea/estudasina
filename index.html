@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="assets/css/v2-mobile-vertical-method.css" />
   <link rel="stylesheet" href="assets/css/v2-hero-cutout.css" />
   <link rel="stylesheet" href="assets/css/v2-paths.css" />
+  <link rel="stylesheet" href="assets/css/v2-results.css" />
   <link rel="stylesheet" href="assets/css/v2-animations.css" />
   <script>document.documentElement.classList.add('es-motion');</script>
 </head>
@@ -286,6 +287,59 @@
         <p class="es-path-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>O Curso Estuda Sina está em desenvolvimento. A estrutura final, plataforma, condições de acesso e lançamento ainda serão definidos.</span></p>
       </div>
     </section>
+
+    <section class="es-results" id="resultados" aria-labelledby="resultados-title">
+      <div class="es-shell">
+        <div class="es-results-head">
+          <div>
+            <p class="es-kicker">Resultados reais</p>
+            <h2 class="es-section-title" id="resultados-title">Método não se mede pelo que promete. <em>Se mede pelo que entrega.</em></h2>
+          </div>
+          <p class="es-results-intro">Aprovação é consequência de muitos fatores — e nenhum método pode prometer resultado. Mas histórias concretas mostram o que acontece quando estratégia, execução e acompanhamento começam a trabalhar juntos.</p>
+        </div>
+
+        <div class="es-results-board">
+          <article class="es-result-featured">
+            <div class="es-result-media">
+              <img src="assets/images/results/policia-penal-rs-placeholder.png" alt="Exemplo ilustrativo de aprovação em concurso público" />
+            </div>
+            <div class="es-result-featured-content">
+              <div class="es-result-badges">
+                <span class="es-result-badge"><i class="fa-solid fa-trophy" aria-hidden="true"></i>Aprovação em destaque</span>
+                <span class="es-result-badge"><i class="fa-solid fa-flask" aria-hidden="true"></i>Placeholder ilustrativo</span>
+              </div>
+              <h3>Polícia Penal RS</h3>
+              <p>Este card está usando uma imagem temporária apenas para validar o layout. Na versão final, cada destaque será substituído por uma aprovação real, com contexto, identificação e comprovação autorizada.</p>
+            </div>
+          </article>
+
+          <div class="es-results-side">
+            <article class="es-result-side-card">
+              <div class="es-result-side-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
+              <small>O que queremos provar</small>
+              <strong>Evolução que aparece nos dados — e no resultado.</strong>
+              <p>Percentual de acertos, consistência, rotina e aprovações serão apresentados com contexto, sem promessas fáceis.</p>
+            </article>
+
+            <article class="es-result-message">
+              <div class="es-result-message-top">
+                <span class="es-result-message-avatar"><i class="fa-solid fa-user" aria-hidden="true"></i></span>
+                <div><strong>Mensagem de mentoranda</strong><span>exemplo de layout · conteúdo temporário</span></div>
+              </div>
+              <blockquote>“Quando eu parei de tentar estudar tudo e comecei a seguir uma estratégia clara, finalmente senti que estava avançando.”</blockquote>
+              <div class="es-result-message-foot"><i class="fa-solid fa-comment-dots" aria-hidden="true"></i><span>Depoimento real entrará aqui</span></div>
+            </article>
+
+            <div class="es-results-trust">
+              <i class="fa-solid fa-shield-check" aria-hidden="true"></i>
+              <p><strong>Prova antes de estética.</strong> Na versão final, este espaço priorizará prints, resultados oficiais e relatos reais autorizados.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="es-results-footnote"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>Conteúdo desta seção é temporário para validação visual e será substituído por resultados reais antes da publicação final.</span></p>
+      </div>
+    </section>
   </main>
 
   <script>
@@ -401,6 +455,16 @@
       if (pathNote) {
         pathNote.classList.add('es-animate');
         revealObserver.observe(pathNote);
+      }
+
+      addRevealGroup('.es-results-head > *', 100);
+      addRevealGroup('.es-result-featured', 0);
+      addRevealGroup('.es-result-side-card, .es-result-message, .es-results-trust', 120);
+
+      const resultsFootnote = document.querySelector('.es-results-footnote');
+      if (resultsFootnote) {
+        resultsFootnote.classList.add('es-animate');
+        revealObserver.observe(resultsFootnote);
       }
     } else {
       document.documentElement.classList.remove('es-motion');
