@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="assets/css/v2-mobile.css" />
   <link rel="stylesheet" href="assets/css/v2-mobile-vertical-method.css" />
   <link rel="stylesheet" href="assets/css/v2-hero-cutout.css" />
+  <link rel="stylesheet" href="assets/css/v2-paths.css" />
   <link rel="stylesheet" href="assets/css/v2-animations.css" />
   <script>document.documentElement.classList.add('es-motion');</script>
 </head>
@@ -213,6 +214,78 @@
         </div>
       </div>
     </section>
+
+    <section class="es-paths" id="curso" aria-labelledby="caminhos-title">
+      <div class="es-shell">
+        <div class="es-paths-head">
+          <p class="es-kicker">Escolha como aplicar o método</p>
+          <h2 class="es-section-title" id="caminhos-title">O mesmo método. <em>Dois níveis de acompanhamento.</em></h2>
+          <p class="es-paths-intro">A base é a mesma: planejamento, execução, revisão, mensuração e ajuste. O que muda é quanto suporte você quer ao longo do caminho.</p>
+        </div>
+
+        <div class="es-paths-bridge"><span>Autonomia</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i><span>Acompanhamento individual</span></div>
+
+        <div class="es-paths-grid">
+          <article class="es-path-card es-path-card-course">
+            <div class="es-path-top">
+              <div class="es-path-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
+              <div class="es-path-labels">
+                <span class="es-path-tag">Mais acessível</span>
+                <span class="es-path-tag es-path-tag-status">Em desenvolvimento</span>
+              </div>
+            </div>
+
+            <div class="es-path-body">
+              <p class="es-path-overline">Método com autonomia</p>
+              <h3>Curso Estuda Sina</h3>
+              <p class="es-path-subtitle">Para quem quer aprender a estruturar a própria preparação e aplicar o Método Estuda Sina com clareza, organização e independência.</p>
+
+              <ul class="es-path-list">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Método apresentado de forma estruturada e aplicável.</span></li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Orientação para planejamento, revisões, questões e análise de desempenho.</span></li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Materiais e ferramentas para organizar a rotina de estudo.</span></li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Flexibilidade para estudar no seu ritmo e ajustar sua estratégia.</span></li>
+              </ul>
+            </div>
+
+            <div class="es-path-footer">
+              <p class="es-path-fit"><strong>Ideal para:</strong> quem busca direção e método, mas consegue conduzir a própria execução.</p>
+              <a class="es-path-cta" href="#curso"><span>Quero conhecer o curso</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+
+          <article class="es-path-card es-path-card-mentorship">
+            <div class="es-path-top">
+              <div class="es-path-icon"><i class="fa-solid fa-user-check" aria-hidden="true"></i></div>
+              <div class="es-path-labels">
+                <span class="es-path-tag">Experiência premium</span>
+                <span class="es-path-tag es-path-tag-status">Personalizada</span>
+              </div>
+            </div>
+
+            <div class="es-path-body">
+              <p class="es-path-overline">Método + acompanhamento</p>
+              <h3>Mentoria Estuda Sina</h3>
+              <p class="es-path-subtitle">Para quem quer uma preparação conduzida de perto, com estratégia personalizada, metas e ajustes de acordo com a própria realidade e evolução.</p>
+
+              <ul class="es-path-list">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Plano de estudo construído de forma individual.</span></li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Metas semanais e acompanhamento próximo da execução.</span></li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Análise de desempenho para corrigir rota e redefinir prioridades.</span></li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Direção personalizada ao longo de toda a preparação.</span></li>
+              </ul>
+            </div>
+
+            <div class="es-path-footer">
+              <p class="es-path-fit"><strong>Ideal para:</strong> quem quer reduzir decisões, ter cobrança estratégica e saber exatamente onde concentrar energia.</p>
+              <a class="es-path-cta" href="mentoria-oab-concursos.html"><span>Conhecer a mentoria</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <p class="es-path-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>O Curso Estuda Sina está em desenvolvimento. A estrutura final, plataforma, condições de acesso e lançamento ainda serão definidos.</span></p>
+      </div>
+    </section>
   </main>
 
   <script>
@@ -257,12 +330,10 @@
         });
       };
 
-      // Hero editorial entrance.
       requestAnimationFrame(() => {
         document.querySelector('.es-hero-copy')?.classList.add('is-visible');
       });
 
-      // Dashboard has its own stagger and progress-bar motion.
       const dashboardLabel = document.querySelector('.es-dashboard-label');
       if (dashboardLabel) {
         dashboardLabel.classList.add('es-dashboard-motion');
@@ -282,7 +353,6 @@
         revealObserver.observe(card);
       });
 
-      // Supporting sections: subtle only.
       addRevealGroup('.es-proof-item', 75);
       addRevealGroup('.es-section-intro > *', 95);
       addRevealGroup('.es-problem-card', 90);
@@ -311,6 +381,26 @@
       if (methodLoop) {
         methodLoop.classList.add('es-animate');
         revealObserver.observe(methodLoop);
+      }
+
+      const pathsHead = document.querySelector('.es-paths-head');
+      if (pathsHead) {
+        pathsHead.classList.add('es-animate');
+        revealObserver.observe(pathsHead);
+      }
+
+      const pathsBridge = document.querySelector('.es-paths-bridge');
+      if (pathsBridge) {
+        pathsBridge.classList.add('es-animate');
+        revealObserver.observe(pathsBridge);
+      }
+
+      addRevealGroup('.es-path-card', 150);
+
+      const pathNote = document.querySelector('.es-path-note');
+      if (pathNote) {
+        pathNote.classList.add('es-animate');
+        revealObserver.observe(pathNote);
       }
     } else {
       document.documentElement.classList.remove('es-motion');
