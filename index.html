@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="assets/css/v2-hero-cutout.css" />
   <link rel="stylesheet" href="assets/css/v2-paths.css" />
   <link rel="stylesheet" href="assets/css/v2-results.css" />
+  <link rel="stylesheet" href="assets/css/v2-results-cases.css" />
   <link rel="stylesheet" href="assets/css/v2-animations.css" />
   <script>document.documentElement.classList.add('es-motion');</script>
 </head>
@@ -332,6 +333,49 @@
           </div>
         </div>
 
+        <div class="es-results-more">
+          <div class="es-results-more-head">
+            <strong>Outras histórias que vão compor esta seleção.</strong>
+            <span>3 resultados em destaque na Home</span>
+          </div>
+
+          <div class="es-results-cases">
+            <article class="es-result-case">
+              <div class="es-result-case-visual">
+                <div class="es-result-case-icon"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></div>
+                <span class="es-result-case-code">OAB<small>aprovação em destaque</small></span>
+              </div>
+              <div class="es-result-case-body">
+                <div class="es-result-case-meta">
+                  <span class="es-result-case-tag"><i class="fa-solid fa-flask" aria-hidden="true"></i>Exemplo ilustrativo</span>
+                  <span class="es-result-case-count">Caso 02</span>
+                </div>
+                <h3>Aprovação na OAB</h3>
+                <p class="es-result-case-person">Camila Ribeiro · nome e relato temporários</p>
+                <blockquote>“Na reta final eu queria revisar tudo de novo e estava ficando desesperada. A Sina me ajudou a cortar o excesso, priorizar o que fazia sentido e confiar no que eu já tinha construído. Quando saiu o resultado, foi um alívio que eu nem consigo explicar.”</blockquote>
+                <div class="es-result-case-foot"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Resultado e relato reais entrarão aqui</span></div>
+              </div>
+            </article>
+
+            <article class="es-result-case">
+              <div class="es-result-case-visual">
+                <div class="es-result-case-icon"><i class="fa-solid fa-landmark" aria-hidden="true"></i></div>
+                <span class="es-result-case-code">TJ/RJ<small>concurso público</small></span>
+              </div>
+              <div class="es-result-case-body">
+                <div class="es-result-case-meta">
+                  <span class="es-result-case-tag"><i class="fa-solid fa-flask" aria-hidden="true"></i>Exemplo ilustrativo</span>
+                  <span class="es-result-case-count">Caso 03</span>
+                </div>
+                <h3>Tribunal de Justiça do Rio de Janeiro</h3>
+                <p class="es-result-case-person">Renata Duarte · nome e relato temporários</p>
+                <blockquote>“Eu achava que precisava estudar cada vez mais horas. O que mudou foi parar de estudar no automático e começar a ajustar a semana pelo que eu realmente estava errando. Quando vi meu nome no resultado do TJ/RJ, demorei alguns segundos pra acreditar.”</blockquote>
+                <div class="es-result-case-foot"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Resultado e relato reais entrarão aqui</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+
         <p class="es-results-footnote"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>Conteúdo desta seção é temporário para validação visual e será substituído por resultados reais antes da publicação final.</span></p>
       </div>
     </section>
@@ -455,6 +499,7 @@
       addRevealGroup('.es-results-head > *', 100);
       addRevealGroup('.es-result-featured', 0);
       addRevealGroup('.es-result-side-card, .es-result-message', 120);
+      addRevealGroup('.es-result-case', 130);
 
       const resultsFootnote = document.querySelector('.es-results-footnote');
       if (resultsFootnote) {
