@@ -275,28 +275,55 @@
   font-weight: 750;
 }
 
+/* Screenshot / proof slot. The HTML stays intentionally simple so a real
+   authorized print can later replace the placeholder without restructuring. */
 .es-results-trust {
-  display: flex;
+  display: block;
+  min-height: 218px;
+  padding: 0;
+  border-color: rgba(23,48,58,.12);
+  background:
+    linear-gradient(180deg, transparent 58%, rgba(8,24,31,.16) 78%, rgba(8,24,31,.64) 100%),
+    url('../images/results/whatsapp-policia-penal-rs-placeholder.png') center top / 100% auto no-repeat,
+    #edeae5;
+  box-shadow: 0 18px 42px rgba(23,48,58,.08);
+}
+
+.es-results-trust::after {
+  content: 'WhatsApp · exemplo ilustrativo';
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  z-index: 2;
+  display: inline-flex;
   align-items: center;
-  gap: 14px;
-  padding: 18px 20px;
-  background: rgba(255,255,255,.62);
-  box-shadow: none;
+  min-height: 25px;
+  padding: 0 9px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 999px;
+  background: rgba(8,27,35,.68);
+  backdrop-filter: blur(9px);
+  color: rgba(255,255,255,.94);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
 }
 
-.es-results-trust i {
-  color: #2f7f64;
-  font-size: 18px;
+/* Keep the temporary explanatory copy available in the DOM, but not visible
+   inside the proof image card. */
+.es-results-trust > i,
+.es-results-trust > p {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
-
-.es-results-trust p {
-  margin: 0;
-  color: #6c7c82;
-  font-size: 11px;
-  line-height: 1.55;
-}
-
-.es-results-trust strong { color: #314b55; }
 
 .es-results-footnote {
   display: flex;
@@ -314,13 +341,15 @@
 @media (hover: hover) and (pointer: fine) {
   .es-result-featured,
   .es-result-side-card,
-  .es-result-message {
+  .es-result-message,
+  .es-results-trust {
     transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
   }
 
   .es-result-featured:hover,
   .es-result-side-card:hover,
-  .es-result-message:hover {
+  .es-result-message:hover,
+  .es-results-trust:hover {
     transform: translateY(-4px);
     border-color: rgba(47,127,100,.22);
     box-shadow: 0 26px 58px rgba(23,48,58,.11);
@@ -359,6 +388,8 @@
   }
 
   .es-result-side-card { grid-column: 1 / -1; min-height: 235px; }
+
+  .es-results-trust { min-height: 246px; }
 }
 
 @media (max-width: 620px) {
@@ -394,7 +425,10 @@
 
   .es-result-message { padding: 20px; }
 
-  .es-results-trust { padding: 17px 18px; }
+  .es-results-trust {
+    min-height: 235px;
+    background-size: 100% auto;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
