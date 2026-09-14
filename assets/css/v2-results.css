@@ -228,15 +228,20 @@
 }
 
 .es-result-message-avatar {
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
+  display: block;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
   border-radius: 50%;
-  background: #e8f5ed;
-  color: #2f7f64;
-  font-size: 13px;
+  border: 2px solid rgba(47,127,100,.14);
+  background:
+    url('../images/results/mentoranda-avatar-placeholder.png') center / cover no-repeat,
+    #e8f5ed;
+  box-shadow: 0 4px 12px rgba(23,48,58,.10);
 }
+
+.es-result-message-avatar i { display: none; }
 
 .es-result-message-top strong {
   display: block;
