@@ -233,6 +233,10 @@
     </div>
   </footer>
 
+  <div class="mobile-sticky" id="mobileSticky" aria-hidden="true">
+    <a href="#form">Quero minha vaga <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+  </div>
+
   <iframe name="lead_iframe" style="display:none;" title="Envio do formulário"></iframe>
 
   <script src="assets/js/link-param.js"></script>
@@ -271,6 +275,20 @@
         });
       }
     });
+
+    const mobileSticky = document.getElementById('mobileSticky');
+    const leadCard = document.getElementById('form');
+    if (mobileSticky && leadCard && 'IntersectionObserver' in window) {
+      const stickyObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const show = !entry.isIntersecting;
+          mobileSticky.classList.toggle('is-visible', show);
+          mobileSticky.setAttribute('aria-hidden', show ? 'false' : 'true');
+        });
+      }, { threshold: 0.12 });
+
+      stickyObserver.observe(leadCard);
+    }
   </script>
 </body>
 </html>
