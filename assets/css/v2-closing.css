@@ -90,13 +90,13 @@
 .es-final-route {
   position: relative;
   display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) 26px;
-  gap: 13px;
+  grid-template-columns: minmax(0, 1fr) 22px;
+  gap: 14px;
   align-items: center;
-  min-height: 82px;
-  padding: 15px 17px;
-  border: 1px solid rgba(255,255,255,.11);
-  border-radius: 18px;
+  min-height: 68px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
   background: rgba(255,255,255,.055);
   color: #fff;
   text-decoration: none;
@@ -107,32 +107,21 @@
     box-shadow .3s ease;
 }
 
-.es-final-route-icon {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 13px;
-  background: rgba(168,232,193,.10);
-  color: #a8e8c1;
-  font-size: 16px;
-}
-
 .es-final-route strong,
 .es-final-route span {
   display: block;
 }
 
 .es-final-route strong {
-  margin-bottom: 4px;
-  font-size: 13px;
+  margin-bottom: 3px;
+  font-size: 14.5px;
   line-height: 1.2;
 }
 
 .es-final-route span {
-  color: rgba(255,255,255,.54);
-  font-size: 10.5px;
-  line-height: 1.45;
+  color: rgba(255,255,255,.66);
+  font-size: 11.5px;
+  line-height: 1.4;
 }
 
 .es-final-route > i {
@@ -147,31 +136,12 @@
   color: #102731;
 }
 
-.es-final-route-primary .es-final-route-icon {
-  background: rgba(16,39,49,.10);
-  color: #102731;
-}
-
 .es-final-route-primary span {
   color: rgba(16,39,49,.62);
 }
 
 .es-final-route-primary > i {
   color: #102731;
-}
-
-.es-final-route-status {
-  display: inline-flex !important;
-  width: fit-content;
-  margin-top: 6px;
-  padding: 3px 7px;
-  border-radius: 999px;
-  background: rgba(168,232,193,.11);
-  color: #a8e8c1 !important;
-  font-size: 8px !important;
-  font-weight: 800;
-  letter-spacing: .07em;
-  text-transform: uppercase;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -341,16 +311,19 @@
   }
 
   .es-final-route {
-    grid-template-columns: 40px minmax(0, 1fr) 22px;
-    gap: 11px;
-    min-height: 76px;
-    padding: 13px 14px;
-    border-radius: 16px;
+    grid-template-columns: minmax(0, 1fr) 20px;
+    gap: 12px;
+    min-height: 64px;
+    padding: 12px 14px;
+    border-radius: 13px;
   }
 
-  .es-final-route-icon {
-    width: 40px;
-    height: 40px;
+  .es-final-route strong {
+    font-size: 14px;
+  }
+
+  .es-final-route span {
+    font-size: 10.5px;
   }
 
   .es-footer {
