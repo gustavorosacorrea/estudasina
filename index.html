@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="assets/css/v2-paths.css" />
   <link rel="stylesheet" href="assets/css/v2-results.css" />
   <link rel="stylesheet" href="assets/css/v2-results-cases.css" />
+  <link rel="stylesheet" href="assets/css/v2-about.css" />
   <link rel="stylesheet" href="assets/css/v2-animations.css" />
   <script>document.documentElement.classList.add('es-motion');</script>
 </head>
@@ -379,6 +380,61 @@
         <p class="es-results-footnote"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>Conteúdo desta seção é temporário para validação visual e será substituído por resultados reais antes da publicação final.</span></p>
       </div>
     </section>
+
+    <section class="es-about" id="sobre" aria-labelledby="sobre-title">
+      <div class="es-shell es-about-grid">
+        <div class="es-about-visual">
+          <div class="es-about-photo-frame">
+            <img class="es-about-photo" src="assets/images/left-image.png" alt="Sinara Fernanda Kochenborger, criadora do Estuda Sina" loading="lazy" />
+          </div>
+
+          <div class="es-about-nameplate">
+            <span>Criadora do Estuda Sina</span>
+            <strong>Sinara Fernanda Kochenborger</strong>
+          </div>
+
+          <div class="es-about-badge" aria-label="Mais de 12 aprovações em concursos públicos">
+            <small>Na prática</small>
+            <strong>12+</strong>
+            <span>aprovações em concursos públicos</span>
+          </div>
+        </div>
+
+        <div class="es-about-copy">
+          <p class="es-kicker">Quem está por trás do método</p>
+          <h2 class="es-section-title" id="sobre-title">Antes de ensinar um método, Sinara precisou <em>construir o próprio caminho.</em></h2>
+
+          <div class="es-about-story">
+            <p>Aos <strong>22 anos</strong>, ainda na faculdade e conciliando a rotina de estudos com o trabalho em um posto de combustível, Sinara conquistou seu primeiro cargo efetivo em concurso público.</p>
+            <p>A preparação esteve longe de ser uma linha reta. Entre erros, ajustes, revisões e muitas questões, ela foi entendendo que estudar melhor exigia mais do que acumular horas: era preciso <strong>planejar, medir o desempenho e corrigir a rota.</strong></p>
+            <p>Essa experiência, somada a <strong>12+ aprovações em concursos públicos</strong>, deu origem ao Método Estuda Sina — uma forma de organizar a preparação com mais clareza, constância e estratégia.</p>
+          </div>
+
+          <div class="es-about-facts" aria-label="Marcos da trajetória de Sinara">
+            <div class="es-about-fact">
+              <i class="fa-solid fa-flag-checkered" aria-hidden="true"></i>
+              <strong>22 anos</strong>
+              <span>primeiro cargo efetivo em concurso público</span>
+            </div>
+            <div class="es-about-fact">
+              <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+              <strong>Prática</strong>
+              <span>um método lapidado na própria preparação</span>
+            </div>
+            <div class="es-about-fact">
+              <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+              <strong>Proximidade</strong>
+              <span>direção aplicada à realidade de quem estuda</span>
+            </div>
+          </div>
+
+          <div class="es-about-principle">
+            <i class="fa-solid fa-compass" aria-hidden="true"></i>
+            <p><strong>Sem fórmula mágica.</strong> O Estuda Sina nasceu para encurtar a distância entre esforço e direção — usando estratégia, acompanhamento e ajustes que façam sentido na vida real.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script>
@@ -500,6 +556,9 @@
       addRevealGroup('.es-result-featured', 0);
       addRevealGroup('.es-result-side-card, .es-result-message', 120);
       addRevealGroup('.es-result-case', 130);
+      addRevealGroup('.es-about-copy > *', 105);
+      addRevealGroup('.es-about-visual', 0);
+      addRevealGroup('.es-about-fact', 90);
 
       const resultsFootnote = document.querySelector('.es-results-footnote');
       if (resultsFootnote) {
