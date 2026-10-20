@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="assets/css/v2-results.css" />
   <link rel="stylesheet" href="assets/css/v2-results-cases.css" />
   <link rel="stylesheet" href="assets/css/v2-about.css" />
+  <link rel="stylesheet" href="assets/css/v2-faq.css" />
   <link rel="stylesheet" href="assets/css/v2-animations.css" />
   <script>document.documentElement.classList.add('es-motion');</script>
 </head>
@@ -436,6 +437,89 @@
         </div>
       </div>
     </section>
+
+    <section class="es-faq" id="faq" aria-labelledby="faq-title">
+      <div class="es-shell es-faq-grid">
+        <div class="es-faq-intro">
+          <p class="es-kicker">Antes de começar</p>
+          <h2 class="es-section-title" id="faq-title">As dúvidas que mais aparecem <em>antes de dar o próximo passo.</em></h2>
+          <p class="es-faq-lead">O objetivo é deixar claro o que o Estuda Sina faz, para quem ele faz sentido e o que você pode esperar do método — sem promessa fácil e sem complicação.</p>
+
+          <div class="es-faq-note">
+            <i class="fa-solid fa-compass" aria-hidden="true"></i>
+            <span><strong>Curso e mentoria usam a mesma base.</strong> O que muda é o nível de autonomia e acompanhamento que você quer ter.</span>
+          </div>
+        </div>
+
+        <div class="es-faq-list">
+          <details class="es-faq-item">
+            <summary>
+              <span class="es-faq-number">01</span>
+              <span class="es-faq-question">O Método Estuda Sina funciona para OAB e para concursos públicos?</span>
+              <span class="es-faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="es-faq-answer">
+              <p>Sim. A lógica do método é aplicada à preparação para <strong>OAB e diferentes concursos públicos</strong>: organizar prioridades, executar, revisar, acompanhar desempenho e ajustar a estratégia conforme a evolução.</p>
+            </div>
+          </details>
+
+          <details class="es-faq-item">
+            <summary>
+              <span class="es-faq-number">02</span>
+              <span class="es-faq-question">Preciso ter muitas horas livres por dia para conseguir aplicar o método?</span>
+              <span class="es-faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="es-faq-answer">
+              <p>Não. O ponto não é criar uma rotina idealizada, e sim construir uma preparação que caiba na vida real. O planejamento considera o tempo disponível e ajuda a concentrar energia no que tem mais impacto.</p>
+            </div>
+          </details>
+
+          <details class="es-faq-item">
+            <summary>
+              <span class="es-faq-number">03</span>
+              <span class="es-faq-question">Qual é a diferença entre o Curso Estuda Sina e a Mentoria?</span>
+              <span class="es-faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="es-faq-answer">
+              <p>No curso, a proposta é aprender a aplicar o método com mais <strong>autonomia</strong>. Na mentoria, além do método, existe acompanhamento individual, metas e ajustes de acordo com a sua rotina e evolução. O Curso Estuda Sina ainda está em desenvolvimento.</p>
+            </div>
+          </details>
+
+          <details class="es-faq-item">
+            <summary>
+              <span class="es-faq-number">04</span>
+              <span class="es-faq-question">A mentoria entrega um plano de estudos pronto para todo mundo?</span>
+              <span class="es-faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="es-faq-answer">
+              <p>Não. A proposta é justamente evitar um modelo genérico. Na mentoria, o plano é construído considerando <strong>objetivo, rotina, estágio da preparação e desempenho</strong>, e pode ser ajustado conforme os dados mostram novas prioridades.</p>
+            </div>
+          </details>
+
+          <details class="es-faq-item">
+            <summary>
+              <span class="es-faq-number">05</span>
+              <span class="es-faq-question">O método garante aprovação?</span>
+              <span class="es-faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="es-faq-answer">
+              <p>Não. Nenhum método sério pode garantir aprovação. O Estuda Sina organiza a preparação para que você estude com mais direção, consistência e capacidade de corrigir a rota. <strong>O resultado também depende da execução, do contexto e da própria prova.</strong></p>
+            </div>
+          </details>
+
+          <details class="es-faq-item">
+            <summary>
+              <span class="es-faq-number">06</span>
+              <span class="es-faq-question">Por onde começo?</span>
+              <span class="es-faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="es-faq-answer">
+              <p>Se você quer aprender o método e conduzir sua própria preparação, o curso será o caminho mais indicado quando estiver disponível. Se prefere acompanhamento individual e uma estratégia construída junto com você, conheça a <strong>Mentoria Estuda Sina</strong>.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script>
@@ -560,6 +644,8 @@
       addRevealGroup('.es-about-copy > *', 105);
       addRevealGroup('.es-about-visual', 0);
       addRevealGroup('.es-about-fact', 90);
+      addRevealGroup('.es-faq-intro > *', 95);
+      addRevealGroup('.es-faq-item', 80);
 
       const resultsFootnote = document.querySelector('.es-results-footnote');
       if (resultsFootnote) {
