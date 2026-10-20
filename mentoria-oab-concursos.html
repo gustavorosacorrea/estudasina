@@ -2,412 +2,350 @@
 ---
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <script src="assets/js/pixel.js"></script>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EstudaSina — Método para Aprovação</title>
-  <meta name="description" content="Planejamento semanal com cronograma detalhado: saiba exatamente o que estudar e quando revisar. Técnicas de memorização e rotina sustentável com Pomodoro. Vagas limitadas para acompanhamento individual.">
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/favicon.ico">
-  <link rel="apple-touch-icon" href="assets/images/favicon.ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-  <style>
-    :root{
-      --bg:#0e1320;
-      --card:#12192b;
-      --brand:#5eead4;
-      --brand-2:#22d3ee;
-      --text:#e6eaf2;
-      --muted:#9fb0c7;
-      --danger:#ff6b6b;
-    }
-    .logoRow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-    .logoRow img {
-      width: 50px;
-      height: 50px;
-      border-radius: 10px;
-      /* border: 3px solid #000000; */
-      border-radius: 100%;
-      box-shadow: 0px 0px 18px rgb(30 232 186 / 55%);
-    }
-    .alert--success {
-      background: #ccffd6;
-      color: #2cac19;
-      border: 1px solid #179d32;
-    }
-    .alert--success, .alert--error {
-      display: none;
-      margin-top: 14px;
-      padding: 12px 14px;
-      border-radius: 12px;
-      font-weight: 600;
-    }
-    .alert--error {
-      background: #ffe8e5;
-      color: #8a2f2f;
-      border: 1px solid #ffd0c9;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:radial-gradient(1100px 600px at 20% -10%, #1b2440 0%, #0e1320 60%), var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;padding:48px 0}
-    @media (max-width:900px){.hero{grid-template-columns:1fr;padding-top:24px} .card{order:2} .copy{order:1}}
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(94,234,212,.1);color:var(--brand);border:1px solid rgba(94,234,212,.35);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.4px;text-transform:uppercase}
-    h1{font-size:clamp(28px,4.2vw,46px);line-height:1.05;margin:14px 0 12px}
-    .sub{font-size:clamp(15px,1.6vw,18px);color:var(--muted);max-width:58ch;margin:0 0 18px}
-    .badges{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0 18px}
-    .badge{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:8px 12px;border-radius:999px;font-size:13px;display: flex;gap: 5px; align-items: center;}
-    /* Mobile em grid 2x2 */ @media (max-width: 600px) { .badges { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 12px; text-align: center; } .badge { width: 100%; justify-content: center; } }
-    .cta-row{display:flex;justify-content: center;flex-wrap:wrap;gap:12px;margin:20px 0 20px}
-    .cta{appearance:none;border:0;cursor:pointer;border-radius:12px;padding:14px 18px;font-weight:700;font-size:16px;transition:transform .05s ease,box-shadow .2s ease;display:inline-flex;align-items:center;gap:10px;text-decoration:none}
-    .cta:hover{transform:translateY(-1px)}
-    .cta.primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#031016;box-shadow:0 8px 26px rgba(34,211,238,.25)}
-    .cta.secondary{background:transparent;border:1px solid rgba(255,255,255,.18);color:var(--text)}
-    .meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);justify-content: center;font-size:13px;margin-top:8px}
-    .meta strong{color:var(--text)}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px}
-    .card h3{margin:8px 0 10px;font-size:18px}
-    .field{display:flex;flex-direction:column;gap:6px;margin:10px 0}
-    .field input{background:#0b0f1b;border:1px solid rgba(255,255,255,.12);color:var(--text);border-radius:10px;padding:12px;font-size:15px;outline:none}
-    .field input:focus{border-color:var(--brand)}
-    .consent{display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--muted)}
-    .consent input{margin-top:3px}
-    .disclaimer{font-size:11px;color:var(--muted);margin-top:10px}
-    .pill{display:inline-flex;gap:6px;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:12px}
-    .count{display:inline-flex;gap:10px;align-items:center;font-weight:700;color:var(--danger)}
-    /* ALERTS blindados */
-  </style>
+  <title>Mentoria Estuda Sina — OAB e Concursos</title>
+  <meta name="description" content="90 dias de planejamento, metas semanais e acompanhamento individual para organizar sua preparação para OAB e concursos públicos." />
+  <meta name="theme-color" content="#0d2029" />
+  <link rel="icon" type="image/png" href="assets/images/brand/estuda-sina-monogram-dark.png" />
+  <link rel="apple-touch-icon" href="assets/images/brand/estuda-sina-monogram-dark.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/v2-mentoria-leads.css" />
+  <script src="assets/js/pixel.js"></script>
 </head>
 <body>
-  <div class="container">
-    <section class="hero">
-      <div class="copy">
-        <div class="logoRow">
-          <img src="assets/images/sinara-round.png" alt="EstudaSina">
-          <span class="eyebrow">Mentoria EstudaSina</span>
-        </div>
-        <!-- Opções de headline para teste A/B (mantenha apenas uma ativa no seu HTML final) -->
-        <h1>Prepare-se para a OAB e Concursos com 90 dias de <u>acompanhamento estratégico</u>.</h1>
-        <!-- <h1>Plano de estudos sob medida: foco, memorização e resultado pra OAB e Concursos.</h1> -->
-        <!-- <h1>Chega de estudar no escuro: método guiado para acelerar sua aprovação.</h1> -->
-        <p class="sub">Planejamento semanal com cronograma detalhado: saiba exatamente o que estudar e quando revisar. Técnicas de memorização e rotina sustentável com Pomodoro. Vagas limitadas para acompanhamento individual.</p>
+  <header class="ml-header">
+    <div class="ml-shell ml-nav">
+      <a class="ml-logo" href="index.html" aria-label="Estuda Sina — página inicial">
+        <img src="assets/images/brand/estuda-sina-logo-dark.png" alt="Estuda Sina" />
+      </a>
+      <div class="ml-nav-right">
+        <span class="ml-nav-label">Mentoria individual · OAB + Concursos</span>
+        <a class="ml-nav-cta" href="#lead-form">Quero conhecer <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </header>
 
-        <div class="cta-row">
-          <a href="#form" class="cta primary">Quero minha vaga</a>
-          <a href="#form" class="cta secondary">Ver como funciona</a>
-        </div>
-        
-        
-        <div class="badges">
-          <span class="badge"><span>📅</span>Cronograma semanal</span>
-          <span class="badge"><span>🧠</span>Técnicas de memorização</span>
-          <span class="badge"><span>⏱️</span>Rotina com Pomodoro</span>
-          <span class="badge"><span>🤝</span>Salinha de estudos</span>
-        </div>
-        <div class="meta">
-          <span class="pill">✅ Sem custo para entrar na lista</span>
-          <span class="pill">🔒 Seus dados ficam protegidos</span>
-          <span class="count">🔥 Restam <span id="vagas">8</span> vagas neste mês</span>
-        </div>
-      </div>
+  <main>
+    <section class="ml-hero" aria-labelledby="hero-title">
+      <div class="ml-shell ml-hero-grid">
+        <div class="ml-hero-copy ml-reveal">
+          <p class="ml-eyebrow">Mentoria Estuda Sina · 90 dias</p>
+          <h1 id="hero-title">Pare de estudar no escuro. Tenha <em>direção, metas e acompanhamento individual.</em></h1>
+          <p class="ml-hero-lead">A Sinara organiza sua preparação com você: o que priorizar, quando revisar, quais metas cumprir e o que ajustar conforme o seu desempenho — para OAB e concursos públicos.</p>
 
-      <div class="card" id="form">
-        <h3>Entre para a lista de prioridade</h3>
-        <form id="leadForm" class="form" action="https://script.google.com/macros/s/AKfycbzWanQIym2Y2jC_zOnKR9eHNg2gianjw5qH6a_p1JVrXHqSHwGGlOCRhnnvCuB0xYX4BA/exec" method="POST" target="lead_iframe" novalidate>
-          <div class="field">
-            <label for="nome">Nome</label>
-            <input id="nome" name="nome" type="text" placeholder="Seu nome completo" required>
+          <div class="ml-hero-points" aria-label="O que você encontra na mentoria">
+            <div class="ml-hero-point"><i class="fa-solid fa-check" aria-hidden="true"></i><span>Planejamento construído para a sua rotina</span></div>
+            <div class="ml-hero-point"><i class="fa-solid fa-check" aria-hidden="true"></i><span>Metas semanais claras e executáveis</span></div>
+            <div class="ml-hero-point"><i class="fa-solid fa-check" aria-hidden="true"></i><span>Revisões e questões organizadas com estratégia</span></div>
+            <div class="ml-hero-point"><i class="fa-solid fa-check" aria-hidden="true"></i><span>Ajustes de rota conforme sua evolução</span></div>
           </div>
-          <div class="field">
-            <label for="email">E-mail</label>
-            <input id="email" name="email" type="email" placeholder="seuemail@exemplo.com" required>
+
+          <div class="ml-proof-inline" aria-label="Indicadores da mentoria">
+            <span class="ml-proof-chip"><strong>12+</strong> aprovações da Sinara</span>
+            <span class="ml-proof-chip"><strong>100+</strong> pessoas ajudadas</span>
+            <span class="ml-proof-chip"><strong>OAB +</strong> concursos públicos</span>
           </div>
-          <div class="field">
-            <label for="whatsapp">WhatsApp</label>
-            <input id="whatsapp" name="whatsapp" type="tel" required inputmode="numeric" pattern="^\d{10,15}$" placeholder="(55) 9xxxx-xxxx">
-          </div>
-          {% if site.show_consent %}
-          <div class="consent">
-            <input type="checkbox" id="lgpd" checked>
-            <label for="lgpd">Autorizo receber comunicações sobre a Mentoria EstudaSina. Você pode sair quando quiser.</label>
-          </div>
-          {% endif %}
-          <button id="submitBtn" type="submit" class="cta primary" style="width:100%;justify-content:center;margin-top:10px">Entrar na lista</button>
-          <p class="disclaimer">Prometemos não enviar spam. O acesso é por ordem de inscrição e disponibilidade de vagas.</p>
-          
-          <!-- campos hidden para UTM/referrer -->
-          <input type="hidden" id="origem" name="origem">
-          <input type="hidden" id="referrer" name="referrer">
-          <input type="hidden" id="utm_source" name="utm_source">
-          <input type="hidden" id="utm_medium" name="utm_medium">
-          <input type="hidden" id="utm_campaign" name="utm_campaign">
-          <input type="hidden" id="utm_content" name="utm_content">
-          <input type="hidden" id="utm_term" name="utm_term">
-          
-          <div id="ok" class="alert alert--success">
-            <i class="fa-solid fa-check"></i> Recebido! Em breve entraremos em contato no WhatsApp/e-mail.
-          </div>
-          <div id="fail" class="alert alert--error">
-            <i class="fa-solid fa-circle-exclamation"></i> Ops, não foi possível enviar agora. Tente novamente.
-          </div>
-        </form>
-      </div>
-    </section>
-    <section class="faq-section" aria-labelledby="faq-title">
-      <div class="faq-container">
-        <h3 id="faq-title">Perguntas Frequentes</h3>
-    
-        <details class="faq-item">
-          <summary><i class="fa-solid fa-circle-question"></i> Funciona para qualquer concurso ou só para a OAB?</summary>
-          <div class="faq-content">
-            <p>O Método EstudaSina já ajudou alunos na preparação tanto para a OAB quanto para diversos concursos públicos — federais, estaduais e municipais. O acompanhamento é personalizado, adaptado à sua meta específica.</p>
-          </div>
-        </details>
-    
-        <details class="faq-item">
-          <summary><i class="fa-solid fa-clock"></i> Funciona para concursos federais ou apenas estaduais e municipais?</summary>
-          <div class="faq-content">
-            <p>Sim! O Método EstudaSina é flexível e já foi aplicado em concursos de todas as esferas. Se o seu objetivo é um concurso federal de alta concorrência ou um certame municipal, o acompanhamento será ajustado para a sua meta específica.</p>
-          </div>
-        </details>
-    
-        <details class="faq-item">
-          <summary><i class="fa-solid fa-user-group"></i> Preciso ter muitas horas livres para aproveitar a mentoria?</summary>
-          <div class="faq-content">
-            <p>Não. O cronograma é construído de acordo com a sua rotina, mesmo que você tenha pouco tempo disponível por dia. Com foco no essencial e técnicas como o Pomodoro, você consegue evoluir de forma constante.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary><i class="fa-solid fa-user-group"></i> Como funciona o acompanhamento individual?</summary>
-          <div class="faq-content">
-            <p>Você recebe metas semanais personalizadas, revisadas pela mentora Sinara, aprovada em mais de 12 concursos. Além disso, terá acesso à salinha de estudos, um espaço exclusivo para trocar experiências com outros alunos.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary><i class="fa-solid fa-user-group"></i> O método garante aprovação?</summary>
-          <div class="faq-content">
-            <p>Não oferecemos garantias de aprovação, porque o resultado depende do seu esforço e contexto. O que garantimos é uma estrutura de estudo clara, com cronograma, técnicas de memorização e acompanhamento próximo — fatores que aumentam suas chances de aprovação.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary><i class="fa-solid fa-user-group"></i> Como faço para garantir minha vaga?</summary>
-          <div class="faq-content">
-            <p>Basta preencher o formulário nesta página. A inscrição é gratuita e as vagas são limitadas a 8 por mês, para que cada aluno receba atenção individual. Após a inscrição, você recebe os próximos passos no seu e-mail e WhatsApp.</p>
-          </div>
-        </details>
-      </div>
-    </section>
-    <section class="mentor-section" aria-labelledby="mentor-title">
-      <div class="mentor-container">
-        <img src="assets/images/sinara-round.png" alt="Sinara Fernanda Kochenborger" class="mentor-photo">
-        <h3 id="mentor-title">Quem vai te acompanhar</h3>
-    
-        <p><strong>Sinara Fernanda Kochenborger</strong> foi aprovada em <strong>12+ concursos</strong> utilizando o
-          <strong>Método EstudaSina</strong>.</p>
-    
-        <p>Hoje, ela aplica o mesmo método com seus mentorandos — organizando a rotina, definindo
-          <strong>o que</strong> estudar e <strong>quando</strong> revisar, e usando técnicas de memorização que funcionam na prática.</p>
-    
-        <div class="mentor-stats" role="list">
-          <span class="stat" role="listitem"><i class="fa-solid fa-trophy"></i> 12+ aprovações da mentora</span>
-          <span class="stat" role="listitem"><i class="fa-solid fa-user-graduate"></i> 30+ aprovações de alunos</span>
-          <span class="stat" role="listitem"><i class="fa-solid fa-calendar-check"></i> Cronograma sob medida</span>
         </div>
-    
-        <p class="disclaimer">Resultados variam conforme dedicação e contexto individual.</p>
+
+        <aside class="ml-lead-card ml-reveal" id="lead-form" aria-labelledby="lead-title">
+          <p class="ml-form-kicker">Quero conhecer a mentoria</p>
+          <h2 id="lead-title">Receba os detalhes e veja se ela faz sentido para você.</h2>
+          <p class="ml-form-intro">Leva menos de 1 minuto. Depois do envio, entraremos em contato pelo WhatsApp ou e-mail com os próximos passos.</p>
+
+          <form id="leadForm" action="https://script.google.com/macros/s/AKfycbzWanQIym2Y2jC_zOnKR9eHNg2gianjw5qH6a_p1JVrXHqSHwGGlOCRhnnvCuB0xYX4BA/exec" method="POST" target="lead_iframe" novalidate>
+            <div class="ml-field">
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Seu nome completo" required />
+            </div>
+            <div class="ml-field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="seuemail@exemplo.com" required />
+            </div>
+            <div class="ml-field">
+              <label for="whatsapp">WhatsApp</label>
+              <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" inputmode="numeric" pattern="^\d{10,15}$" placeholder="(55) 9xxxx-xxxx" required />
+            </div>
+
+            {% if site.show_consent %}
+            <label class="ml-consent" for="lgpd">
+              <input type="checkbox" id="lgpd" checked />
+              <span>Autorizo receber comunicações sobre a Mentoria Estuda Sina. Você pode sair quando quiser.</span>
+            </label>
+            {% endif %}
+
+            <button id="submitBtn" type="submit" class="ml-btn ml-submit">
+              Quero receber os detalhes <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+
+            <p class="ml-form-note"><i class="fa-solid fa-lock" aria-hidden="true"></i><span>Sem pagamento nesta etapa. Seus dados são usados apenas para o contato sobre a mentoria.</span></p>
+
+            <input type="hidden" id="origem" name="origem" />
+            <input type="hidden" id="referrer" name="referrer" />
+            <input type="hidden" id="utm_source" name="utm_source" />
+            <input type="hidden" id="utm_medium" name="utm_medium" />
+            <input type="hidden" id="utm_campaign" name="utm_campaign" />
+            <input type="hidden" id="utm_content" name="utm_content" />
+            <input type="hidden" id="utm_term" name="utm_term" />
+
+            <div id="ok" class="alert--success" hidden>
+              <i class="fa-solid fa-check" aria-hidden="true"></i> Recebido! Em breve entraremos em contato pelo WhatsApp ou e-mail.
+            </div>
+            <div id="fail" class="alert--error" hidden>
+              <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i> Não foi possível enviar agora. Tente novamente.
+            </div>
+          </form>
+        </aside>
       </div>
     </section>
-    <style>
-      .hidden { display: none !important;}
-      .mentor-section {
-        background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.04));
-        border-top: 1px solid rgba(255,255,255,.08);
-        padding: 60px 20px; margin-top: 60px; text-align: center;
-      }
-      .mentor-container { max-width: 720px; margin: 0 auto; color: #e6eaf2; }
-      .mentor-photo {
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 20px;
-        border: 3px solid #123f47;
-        box-shadow: 0 8px 20px rgba(34,211,238,.25);
-      }
-      .mentor-section h3 { font-size: 22px; margin-bottom: 12px; color: #5eead4; }
-      .mentor-section p { font-size: 15px; line-height: 1.6; margin: 6px 0; color: #cfd8e6; }
-      .mentor-section p strong { color: #fff; }
-      
-      .mentor-stats {
-        display: grid; grid-template-columns: repeat(3, 1fr);
-        gap: 10px; margin: 16px 0 8px;
-      }
-      .stat {
-        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-        padding: 8px 12px; border-radius: 999px;
-        background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
-        font-size: 13px; color: #e6eaf2;
-      }
-      .disclaimer { font-size: 12px; color: #93a4bd; margin-top: 10px; }
-      
-      /* Mobile */
-      @media (max-width: 700px) {
-        .mentor-stats { grid-template-columns: 1fr; }
-        .mentor-photo { width: 110px; height: 110px; }
-        .mentor-section h3 { font-size: 20px; }
-        .mentor-section p { font-size: 14px; }
-      }
-    </style>
+
+    <section class="ml-trust" aria-label="Autoridade e acompanhamento">
+      <div class="ml-shell">
+        <div class="ml-trust-grid ml-reveal">
+          <div class="ml-trust-item"><strong>90 dias</strong><span>de acompanhamento estratégico</span></div>
+          <div class="ml-trust-item"><strong>12+ aprovações</strong><span>na trajetória da Sinara</span></div>
+          <div class="ml-trust-item"><strong>100+ pessoas</strong><span>ajudadas entre aprovações, nomeações e posses</span></div>
+          <div class="ml-trust-item"><strong>Individual</strong><span>plano e ajustes para a sua realidade</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ml-section ml-change" id="como-funciona" aria-labelledby="change-title">
+      <div class="ml-shell">
+        <div class="ml-section-head ml-reveal">
+          <p class="ml-kicker">O que muda na prática</p>
+          <h2 class="ml-title" id="change-title">A mentoria não entrega mais conteúdo. <em>Ela organiza o caminho.</em></h2>
+          <p class="ml-section-copy">O objetivo é tirar sua preparação do improviso e transformar cada semana em um ciclo com prioridade, execução, revisão e ajuste.</p>
+        </div>
+
+        <div class="ml-change-grid">
+          <article class="ml-change-card ml-reveal">
+            <div class="ml-change-icon"><i class="fa-solid fa-compass" aria-hidden="true"></i></div>
+            <small>Prioridade</small>
+            <h3>Saber o que merece atenção agora</h3>
+            <p>Em vez de tentar estudar tudo ao mesmo tempo, você direciona energia para o que faz mais sentido no seu momento.</p>
+          </article>
+          <article class="ml-change-card ml-reveal">
+            <div class="ml-change-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></div>
+            <small>Execução</small>
+            <h3>Transformar objetivo em metas semanais</h3>
+            <p>O plano deixa de ser abstrato. Você sabe o que executar e consegue enxergar com clareza o que foi ou não cumprido.</p>
+          </article>
+          <article class="ml-change-card ml-reveal">
+            <div class="ml-change-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
+            <small>Mensuração</small>
+            <h3>Usar desempenho para decidir</h3>
+            <p>Questões, acertos, revisões e consistência passam a orientar a preparação, em vez de depender apenas de sensação.</p>
+          </article>
+          <article class="ml-change-card ml-reveal">
+            <div class="ml-change-icon"><i class="fa-solid fa-sliders" aria-hidden="true"></i></div>
+            <small>Ajuste</small>
+            <h3>Corrigir a rota antes de perder semanas</h3>
+            <p>Quando algo não funciona, o plano muda. A estratégia acompanha a sua evolução em vez de ficar engessada.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ml-section ml-process" aria-labelledby="process-title">
+      <div class="ml-shell">
+        <div class="ml-section-head ml-reveal">
+          <p class="ml-kicker">Como funcionam os 90 dias</p>
+          <h2 class="ml-title" id="process-title">Um acompanhamento que evolui <em>junto com o seu desempenho.</em></h2>
+          <p class="ml-section-copy">Não é um cronograma entregue no primeiro dia e esquecido depois. A preparação é acompanhada e ajustada ao longo do processo.</p>
+        </div>
+
+        <div class="ml-process-track">
+          <article class="ml-process-step ml-reveal">
+            <div class="ml-process-node"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div>
+            <small>01</small><h3>Diagnóstico</h3><p>Objetivo, rotina, tempo disponível e estágio atual da preparação.</p>
+          </article>
+          <article class="ml-process-step ml-reveal">
+            <div class="ml-process-node"><i class="fa-solid fa-map" aria-hidden="true"></i></div>
+            <small>02</small><h3>Planejamento</h3><p>Prioridades e metas transformadas em uma semana possível de executar.</p>
+          </article>
+          <article class="ml-process-step ml-reveal">
+            <div class="ml-process-node"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
+            <small>03</small><h3>Execução</h3><p>Estudo, questões e revisões seguindo uma estratégia clara.</p>
+          </article>
+          <article class="ml-process-step ml-reveal">
+            <div class="ml-process-node"><i class="fa-solid fa-chart-column" aria-hidden="true"></i></div>
+            <small>04</small><h3>Análise</h3><p>O desempenho mostra onde você avançou e onde ainda está perdendo pontos.</p>
+          </article>
+          <article class="ml-process-step ml-reveal">
+            <div class="ml-process-node"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></div>
+            <small>05</small><h3>Ajustes</h3><p>A próxima semana nasce dos dados da anterior. O ciclo se repete mais inteligente.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ml-section ml-fit" aria-labelledby="fit-title">
+      <div class="ml-shell">
+        <div class="ml-section-head ml-reveal">
+          <p class="ml-kicker">Para quem faz sentido</p>
+          <h2 class="ml-title" id="fit-title">A mentoria exige acompanhamento da Sinara — e <em>execução da sua parte.</em></h2>
+        </div>
+
+        <div class="ml-fit-grid">
+          <article class="ml-fit-card ml-reveal">
+            <h3>Provavelmente é para você se...</h3>
+            <ul class="ml-fit-list">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>você estuda, mas sente dificuldade para definir o que priorizar;</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>sua rotina muda e você precisa de um plano que acompanhe a vida real;</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>você quer metas, acompanhamento e alguém olhando seus números com você;</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>você está disposto a executar, medir e ajustar a preparação semana após semana.</span></li>
+            </ul>
+          </article>
+
+          <article class="ml-fit-card is-dark ml-reveal">
+            <h3>Talvez não seja para você se...</h3>
+            <ul class="ml-fit-list">
+              <li><i class="fa-solid fa-xmark" aria-hidden="true"></i><span>você procura uma fórmula que prometa aprovação sem depender da sua execução;</span></li>
+              <li><i class="fa-solid fa-xmark" aria-hidden="true"></i><span>quer apenas receber um cronograma genérico e seguir sozinho;</span></li>
+              <li><i class="fa-solid fa-xmark" aria-hidden="true"></i><span>não pretende acompanhar questões, revisões e desempenho;</span></li>
+              <li><i class="fa-solid fa-xmark" aria-hidden="true"></i><span>está buscando somente mais aulas ou mais material para consumir.</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ml-section ml-mentor" aria-labelledby="mentor-title">
+      <div class="ml-shell ml-mentor-grid">
+        <div class="ml-mentor-photo-wrap ml-reveal">
+          <img class="ml-mentor-photo" src="assets/images/sinara-profile.jpg" alt="Sinara Fernanda Kochenborger" loading="lazy" />
+          <div class="ml-mentor-badge"><strong>100+</strong><span>pessoas ajudadas em jornadas de aprovação, nomeação e posse</span></div>
+        </div>
+
+        <div class="ml-mentor-copy ml-reveal">
+          <p class="ml-kicker">Quem vai acompanhar você</p>
+          <h2 class="ml-title" id="mentor-title">Sinara construiu o método <em>estudando, errando, ajustando e aprovando.</em></h2>
+          <p>Aos 22 anos, ainda na faculdade e conciliando os estudos com o trabalho em um posto de combustível, Sinara conquistou seu primeiro cargo efetivo em concurso público.</p>
+          <p>Depois vieram novas aprovações — hoje são <strong>12+</strong> — e um trabalho de acompanhamento que já ajudou <strong>mais de 100 pessoas</strong> em trajetórias de aprovação e ingresso no serviço público.</p>
+          <p>É essa experiência prática que orienta a mentoria: proximidade, metas claras, leitura de desempenho e correção de rota sem fórmula mágica.</p>
+
+          <div class="ml-mentor-stats">
+            <span class="ml-mentor-stat">12+ aprovações da mentora</span>
+            <span class="ml-mentor-stat">100+ pessoas ajudadas</span>
+            <span class="ml-mentor-stat">OAB + concursos públicos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ml-section ml-faq" aria-labelledby="faq-title">
+      <div class="ml-shell ml-faq-wrap">
+        <div class="ml-section-head ml-reveal">
+          <p class="ml-kicker">Perguntas frequentes</p>
+          <h2 class="ml-title" id="faq-title">Antes de enviar seus dados, <em>vale saber isso.</em></h2>
+        </div>
+
+        <div class="ml-faq-list">
+          <details class="ml-faq-item ml-reveal">
+            <summary><span>Funciona tanto para OAB quanto para concursos públicos?</span><span class="ml-faq-toggle" aria-hidden="true"></span></summary>
+            <div class="ml-faq-answer"><p>Sim. A base do método é aplicável à preparação para OAB e diferentes concursos públicos. O planejamento e as prioridades são adaptados ao seu objetivo específico.</p></div>
+          </details>
+          <details class="ml-faq-item ml-reveal">
+            <summary><span>Preciso ter muitas horas livres por dia?</span><span class="ml-faq-toggle" aria-hidden="true"></span></summary>
+            <div class="ml-faq-answer"><p>Não. A proposta é construir uma preparação que caiba na sua rotina. O tempo disponível entra no planejamento desde o início.</p></div>
+          </details>
+          <details class="ml-faq-item ml-reveal">
+            <summary><span>Eu recebo um cronograma pronto para os 90 dias?</span><span class="ml-faq-toggle" aria-hidden="true"></span></summary>
+            <div class="ml-faq-answer"><p>Não é um plano engessado. A mentoria trabalha com metas e prioridades que podem ser ajustadas conforme sua execução e seu desempenho ao longo das semanas.</p></div>
+          </details>
+          <details class="ml-faq-item ml-reveal">
+            <summary><span>O acompanhamento é individual?</span><span class="ml-faq-toggle" aria-hidden="true"></span></summary>
+            <div class="ml-faq-answer"><p>Sim. A estratégia considera sua rotina, objetivo, estágio de preparação e evolução. Por isso as vagas são limitadas: o acompanhamento precisa continuar próximo.</p></div>
+          </details>
+          <details class="ml-faq-item ml-reveal">
+            <summary><span>A mentoria garante aprovação?</span><span class="ml-faq-toggle" aria-hidden="true"></span></summary>
+            <div class="ml-faq-answer"><p>Não. Nenhum acompanhamento sério pode garantir aprovação. A mentoria organiza a preparação, acompanha a execução e melhora a qualidade das decisões, mas o resultado também depende da sua dedicação, do contexto e da própria prova.</p></div>
+          </details>
+          <details class="ml-faq-item ml-reveal">
+            <summary><span>O que acontece depois que eu preencher o formulário?</span><span class="ml-faq-toggle" aria-hidden="true"></span></summary>
+            <div class="ml-faq-answer"><p>Seus dados entram na lista de interessados e você recebe o contato com os detalhes da mentoria, disponibilidade e próximos passos. Preencher o formulário não gera cobrança nem contratação automática.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="ml-final">
+      <div class="ml-shell">
+        <div class="ml-final-card ml-reveal">
+          <h2>Sua preparação não precisa continuar no improviso. <em>O próximo ciclo pode começar com direção.</em></h2>
+          <p>Preencha o formulário no início da página e receba os detalhes da Mentoria Estuda Sina para avaliar se esse acompanhamento faz sentido para o seu momento.</p>
+          <a class="ml-btn" href="#lead-form">Quero conhecer a mentoria <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ml-footer">
+    <div class="ml-shell">
+      <div class="ml-footer-top">
+        <div class="ml-footer-brand">
+          <a href="index.html" aria-label="Estuda Sina — início"><img src="assets/images/brand/estuda-sina-logo-light.png" alt="Estuda Sina" /></a>
+          <p>Acompanhamento estratégico para OAB e concursos públicos. Método, direção e evolução mensurável.</p>
+        </div>
+        <div class="ml-footer-links">
+          <a href="index.html">Site</a>
+          <a href="https://instagram.com/estudasina" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://wa.me/5555996495662" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="mailto:contato@estudasina.com.br">E-mail</a>
+        </div>
+      </div>
+      <div class="ml-footer-bottom">
+        <span>© <span id="ml-year">2026</span> Estuda Sina · CNPJ 58.891.673/0001-69</span>
+        <span>Resultados variam conforme dedicação, contexto individual e características de cada prova.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="ml-mobile-sticky" id="mobileSticky">
+    <a href="#lead-form">Quero receber os detalhes</a>
   </div>
 
-  <script>
-    // Exemplo simples de redução de vagas (apenas visual — troque por lógica real no seu site)
-    (function(){
-      try {
-        const key='vagas_restantes_mes';
-        const stored=localStorage.getItem(key);
-        let vagas = stored? parseInt(stored,10): 8;
-        if (vagas>3) { vagas = vagas - 1; }
-        localStorage.setItem(key, String(vagas));
-        const el=document.getElementById('vagas');
-        if (el) el.textContent = String(vagas);
-      } catch(e){/* noop */}
-    })();
-    
-    // Ajuste se tiver header fixo (em px). Se não tiver, pode deixar 0.
-    const OFFSET = 0; 
-    
-    function scrollFormCenter(e) {
-      const link = e.target.closest('a[href="#form"], .cta[href="#form"]');
-      if (!link) return;
-      e.preventDefault();
-      e.stopPropagation();
-    
-      const form = document.getElementById('form');
-      if (!form) return;
-    
-      // Calcula Y para centralizar o form na janela
-      const rect = form.getBoundingClientRect();
-      const targetY = window.pageYOffset + rect.top 
-                    - ((window.innerHeight - rect.height) / 2) 
-                    - OFFSET;
-    
-      window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
-    }
-    
-    // Delegação captura TODOS os cliques em links para #form
-    document.addEventListener('click', scrollFormCenter, true);
-  </script>
-  
-  <iframe name="lead_iframe" style="display:none;"></iframe>
-  
-  <!-- jQuery -->
-  <script src="assets/js/jquery-2.1.0.min.js"></script>
-  
-  <!-- Plugins -->
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/scrollreveal.min.js"></script>
-  <script src="assets/js/waypoints.min.js"></script>
-  
-  <!-- Adicionar UTM nos links do site -->
+  <iframe name="lead_iframe" style="display:none" title="Envio do formulário"></iframe>
+
   <script src="assets/js/link-param.js"></script>
-  
-  <!-- Leads Form -->
   <script src="assets/js/leads.js"></script>
-</body>
-<footer style="background: linear-gradient(0deg, black, #0e1321); color:#9fb0c7; padding:32px 20px; text-align:center; font-size:14px; line-height:1.6; margin-top:48px;">
-  <img src="assets/images/Logo-ES-branco.png" loading="lazy" height="40px" width="auto">
-  <p>Acompanhamento Estratégico para OAB e Concursos</p>
-  <p>CNPJ: 58.891.673/0001-69 · Coronel Bicaco/RS</p>
-  <p>Contato: <a href="mailto:contato@estudasina.com.br" style="color:#5eead4;">contato@estudasina.com.br</a> · 
-  WhatsApp: <a href="https://wa.me/5555999999999" style="color:#5eead4;" target="_blank" rel="noopener noreferrer">(55) 9 9999-9999</a></p>
-  <p>
-    <a href="#" style="color:#9fb0c7; text-decoration:none;">Política de Privacidade</a> · 
-    <a href="#" style="color:#9fb0c7; text-decoration:none;">Termos de Uso</a>
-  </p>
-  <p style="margin-top:12px; font-size:12px; color:#6c7a92;">© 2025 EstudaSina — Todos os direitos reservados.</p>
-</footer>
+  <script>
+    const year = document.getElementById('ml-year');
+    if (year) year.textContent = String(new Date().getFullYear());
 
-<style>
-  .faq-section {
-    background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.04));
-    border-top: 1px solid rgba(255,255,255,.08);
-    padding: 60px 20px;
-    margin-top: 60px;
-  }
-  
-  .faq-container { max-width: 800px; margin: 0 auto; color: #e6eaf2; }
-  .faq-section h3 { font-size: 24px; text-align: center; margin-bottom: 26px; color: #5eead4; }
-  
-  .faq-item {
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 12px;
-    margin: 10px 0;
-    overflow: hidden; /* bordas limpas */
-  }
-  
-  .faq-item summary {
-    list-style: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-size: 16px;
-    color: #fff;
-    display: flex; align-items: center; gap: 10px;
-    outline: none;
-    user-select: none;
-  }
-  
-  .faq-item summary::-webkit-details-marker { display: none; }
-  
-  .faq-item[open] summary {
-    border-bottom: 1px solid rgba(255,255,255,.08);
-    background: rgba(255,255,255,.02);
-  }
-  
-  .faq-item .faq-content {
-    padding: 14px 16px;
-    color: #cfd8e6;
-    font-size: 15px;
-    line-height: 1.6;
-  }
-  
-  /* Indicador visual (seta) usando pseudo-elemento */
-  .faq-item summary::after {
-    content: "\f078"; /* fa-chevron-down */
-    font-family: "Font Awesome 7 Free";
-    font-weight: 900;
-    margin-left: auto;
-    transition: transform .2s ease;
-    opacity: .9;
-  }
-  .faq-item[open] summary::after { transform: rotate(180deg); }
-  
-  /* Mobile */
-  @media (max-width: 700px) {
-    .faq-section h3 { font-size: 20px; }
-    .faq-item summary { font-size: 15px; padding: 12px 14px; }
-    .faq-item .faq-content { font-size: 14px; padding: 12px 14px; }
-  }
-
-</style>
-<script>
-  document.addEventListener('click', function(e) {
-    const el = e.target.closest('details.faq-item');
-    if (!el) return;
-    // fecha os demais quando um abre
-    if (!el.open) {
-      document.querySelectorAll('details.faq-item[open]').forEach(d => {
-        if (d !== el) d.removeAttribute('open');
-      });
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reducedMotion && 'IntersectionObserver' in window) {
+      const reveal = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+      document.querySelectorAll('.ml-reveal').forEach(el => reveal.observe(el));
+    } else {
+      document.querySelectorAll('.ml-reveal').forEach(el => el.classList.add('is-visible'));
     }
-  });
-</script>
 
+    document.querySelectorAll('.ml-faq-item').forEach(item => {
+      item.addEventListener('toggle', () => {
+        if (!item.open) return;
+        document.querySelectorAll('.ml-faq-item[open]').forEach(other => {
+          if (other !== item) other.removeAttribute('open');
+        });
+      });
+    });
+
+    const sticky = document.getElementById('mobileSticky');
+    const leadCard = document.getElementById('lead-form');
+    if (sticky && leadCard && 'IntersectionObserver' in window) {
+      const stickyObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => sticky.classList.toggle('is-visible', !entry.isIntersecting));
+      }, { threshold: 0.12 });
+      stickyObserver.observe(leadCard);
+    }
+  </script>
+</body>
 </html>
