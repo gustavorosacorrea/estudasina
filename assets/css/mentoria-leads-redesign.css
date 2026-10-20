@@ -717,8 +717,8 @@ button,a{-webkit-tap-highlight-color:transparent}
 
   .mobile-sticky{
     position:fixed;
-    left:16px;
-    right:16px;
+    left:24px;
+    right:24px;
     bottom:calc(14px + env(safe-area-inset-bottom));
     z-index:120;
     display:block;
@@ -739,7 +739,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     justify-content:center;
     gap:9px;
     width:min(100%,420px);
-    min-height:50px;
+    min-height:47px;
     margin:0 auto;
     padding:0 20px;
     border:1px solid rgba(13,27,36,.08);
@@ -750,7 +750,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     font-size:12px;
     font-weight:800;
     text-decoration:none;
-    box-shadow:0 12px 32px rgba(6,23,31,.18);
+    box-shadow:0 10px 26px rgba(6,23,31,.22),0 2px 8px rgba(6,23,31,.08);
     pointer-events:auto;
   }
 }
