@@ -689,7 +689,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   .pill{font-size:9px}
   .card{padding:22px 18px;border-radius:21px}
   .card h3{font-size:22px}
-  .trust{padding-bottom:42px}
+  .trust{padding-bottom:42px;padding-top:58px}
   .trust-grid{grid-template-columns:1fr}
   .trust-item{min-height:auto;border-right:0;border-bottom:1px solid var(--line)}
   .trust-item:last-child{border-bottom:0}
