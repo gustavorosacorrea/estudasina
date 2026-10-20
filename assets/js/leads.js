@@ -5,6 +5,7 @@
   const fail   = document.getElementById('fail');
   const iframe = document.getElementsByName('lead_iframe')[0];
   const w      = document.getElementById('whatsapp');
+  const defaultBtnHtml = btn ? btn.innerHTML : 'Enviar informações';
 
   // --------- Estado inicial: alerts SEMPRE ocultos ---------
   if (ok)   { ok.hidden = true;   ok.style.display = 'none'; }
@@ -94,7 +95,7 @@
 	  submitted = false;
 	  if (btn) {
 		btn.disabled = false;
-		btn.innerHTML = '<i class="fa-solid fa-clipboard-list"></i> Enviar informações';
+		btn.innerHTML = defaultBtnHtml;
 	  }
 	  if (fail) { fail.hidden = false; fail.style.display = 'block'; }
 	}, 12000);
@@ -108,7 +109,7 @@
 	  clearTimeout(timerId);
 	  if (btn) {
 		btn.disabled = false;
-		btn.innerHTML = '<i class="fa-solid fa-clipboard-list"></i> Enviar informações';
+		btn.innerHTML = defaultBtnHtml;
 	  }
 	  if (ok)   { ok.hidden = false;   ok.style.display = 'block'; }
 	  if (fail) { fail.hidden = true;  fail.style.display = 'none'; }
@@ -129,7 +130,7 @@
 	clearTimeout(timerId);
 	if (btn) {
 	  btn.disabled = false;
-	  btn.innerHTML = '<i class="fa-solid fa-clipboard-list"></i> Enviar informações';
+	  btn.innerHTML = defaultBtnHtml;
 	}
 	if (fail) { fail.hidden = false; fail.style.display = 'block'; }
   });
@@ -140,7 +141,7 @@
 	clearTimeout(timerId);
 	if (btn) {
 	  btn.disabled = false;
-	  btn.innerHTML = '<i class="fa-solid fa-clipboard-list"></i> Enviar informações';
+	  btn.innerHTML = defaultBtnHtml;
 	}
 	if (fail) { fail.hidden = false; fail.style.display = 'block'; }
   });
