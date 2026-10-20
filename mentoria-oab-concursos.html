@@ -278,16 +278,34 @@
 
     const mobileSticky = document.getElementById('mobileSticky');
     const leadCard = document.getElementById('form');
-    if (mobileSticky && leadCard && 'IntersectionObserver' in window) {
-      const stickyObserver = new IntersectionObserver(entries => {
+    const heroActions = document.querySelector('.cta-row');
+
+    if (mobileSticky && leadCard && heroActions && 'IntersectionObserver' in window) {
+      let formVisible = false;
+      let heroActionsVisible = true;
+
+      const updateSticky = () => {
+        const show = !formVisible && !heroActionsVisible;
+        mobileSticky.classList.toggle('is-visible', show);
+        mobileSticky.setAttribute('aria-hidden', show ? 'false' : 'true');
+      };
+
+      const formObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-          const show = !entry.isIntersecting;
-          mobileSticky.classList.toggle('is-visible', show);
-          mobileSticky.setAttribute('aria-hidden', show ? 'false' : 'true');
+          formVisible = entry.isIntersecting;
+          updateSticky();
         });
       }, { threshold: 0.12 });
 
-      stickyObserver.observe(leadCard);
+      const heroObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          heroActionsVisible = entry.isIntersecting;
+          updateSticky();
+        });
+      }, { threshold: 0.35 });
+
+      formObserver.observe(leadCard);
+      heroObserver.observe(heroActions);
     }
   </script>
 </body>
