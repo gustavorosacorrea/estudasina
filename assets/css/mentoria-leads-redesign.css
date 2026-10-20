@@ -341,7 +341,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 }
 .trust-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(4,1fr);
   overflow:hidden;
   border:1px solid var(--line);
   border-radius:20px;
@@ -603,6 +603,9 @@ button,a{-webkit-tap-highlight-color:transparent}
 
 @media(max-width:900px){
   .hero-grid{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .trust-item:nth-child(2){border-right:0}
+  .trust-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
   .copy{text-align:center}
   .hero h1,.sub{margin-left:auto;margin-right:auto}
   .badges{width:min(100%,650px);margin-left:auto;margin-right:auto;text-align:left}
